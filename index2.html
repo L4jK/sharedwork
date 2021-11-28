@@ -7,6 +7,22 @@
     <title>sharedwork</title>
 </head>
 <body>
-    
+    <script>
+        function onSuccess(numUnread) {
+          var div = document.getElementById('output');
+          div.innerHTML = 'You have ' + numUnread
+              + ' unread messages in your Gmail inbox.';
+        }
+        function onFailure(error) {
+        var div = document.getElementById('output');
+        div.innerHTML = "ERROR: " + error.message;
+      }
+
+        google.script.run
+            .withSuccessHandler(onSuccess)
+            .withFailureHandler(onFailure)
+            .autofunction();
+      </script>
+    <div id="output"></div>
 </body>
 </html>
