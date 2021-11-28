@@ -19,7 +19,30 @@
         </style>
 </head>
 <body>
-        <iframe class="responsive-iframe" src="https://script.google.com/macros/s/AKfycbx0X4yKJU5ZhChKiXI2nQktTGq8-_r5lhQC0-4f4AX9sIYYTz-OgcRJ3FtUtn7soWaR/exec">
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <div id="g_id_onload"
+          data-callback="handleCredentialResponse">
+         </div>
+         <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+      </div>
+        <script>
+                function handleCredentialResponse(response) {
+                   console.log("ID: " + response);
+                }
+        </script>        
+        <iframe class="responsive-iframe" src="https://script.google.com/macros/s/AKfycbwFTXUZ-bZbeZWcTmi6iNNtvvfmy4oAwNnAiW_lFvrNJIiNZKeE3pyT1xgdsqMdqEKP/exec" onerror="myFunction()">
         </iframe>
+        <script>
+                function myFunction() {
+                  alert('The image could not be loaded.');
+                }
+                </script>
+                
 </body>
 </html>
