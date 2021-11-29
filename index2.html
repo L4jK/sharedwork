@@ -10,8 +10,8 @@
     <script>
         function onSuccess(numUnread) {
           var div = document.getElementById('output');
-          div.innerHTML = 'You have ' + numUnread
-              + ' unread messages in your Gmail inbox.';
+          div.innerHTML = 'resposta ok: ' + numUnread
+              + ' oi.';
         }
         function onFailure(error) {
         var div = document.getElementById('output');
@@ -22,8 +22,9 @@
             .withSuccessHandler(onSuccess)
             .withFailureHandler(onFailure)
             .autofunction(
-                '{"funct":"function(){ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL).getAuthorizationStatus()}"}'
+                '{"funct":"function(){Session.getActiveUser().getEmail();}"}'
             //var folders = DriveApp.getFolders();while (folders.hasNext()){var folder = folders.next();return folder.getName();}
+            //ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL).getAuthorizationStatus()
             );
       </script>
     <div id="output"></div>
