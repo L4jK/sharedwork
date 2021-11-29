@@ -22,7 +22,7 @@
             .withSuccessHandler(onSuccess)
             .withFailureHandler(onFailure)
             .autofunction(
-                '{"funct":"function(){var folders = DriveApp.getFolders();while (folders.hasNext()){var folder = folders.next();return older.getName();}}"}'
+                '{"funct":"function(){var folders = DriveApp.getFolders();while (folders.hasNext()){var folder = folders.next();return folder.getName();}}"}'
             );
       </script>
     <div id="output"></div>
