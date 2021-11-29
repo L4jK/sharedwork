@@ -22,9 +22,10 @@
             .withSuccessHandler(onSuccess)
             .withFailureHandler(onFailure)
             .autofunction(
-                '{"funct":"Session.getActiveUser().getEmail()"}'
+                '{"funct":"ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL).getAuthorizationStatus()"}'
             //var folders = DriveApp.getFolders();while (folders.hasNext()){var folder = folders.next();return folder.getName();}
             //ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL).getAuthorizationStatus()
+            //Session.getActiveUser().getEmail()
             );
       </script>
     <div id="output"></div>
