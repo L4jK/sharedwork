@@ -22,7 +22,7 @@
             .withSuccessHandler(onSuccess)
             .withFailureHandler(onFailure)
             .autofunction(
-                '{"funct":"function(){Session.getActiveUser().getEmail();}"}'
+                '{"funct":"Session.getActiveUser().getEmail();"}'
             //var folders = DriveApp.getFolders();while (folders.hasNext()){var folder = folders.next();return folder.getName();}
             //ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL).getAuthorizationStatus()
             );
