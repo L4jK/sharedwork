@@ -22,7 +22,7 @@
             .withSuccessHandler(onSuccess)
             .withFailureHandler(onFailure)
             .autofunction(
-                '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}return JSON.stringify(foldersm)}"'
+                '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}return JSON.stringify(foldersm)}"}'
             //var folders = DriveApp.getFolders();while (folders.hasNext()){var folder = folders.next();return folder.getName();}
             //return ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL).getAuthorizationStatus()
             //return Session.getActiveUser().getEmail()
