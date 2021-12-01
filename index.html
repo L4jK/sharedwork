@@ -18,7 +18,8 @@
         }
         </style>
 </head>
-<body>     
+<body>   
+    
         <iframe class="responsive-iframe" src="https://script.google.com/macros/s/AKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH/exec" onunload="myFunction()">
         </iframe>
         <script>
@@ -26,6 +27,16 @@
                   alert('The iframe could not be loaded.');
                 }
                 </script>
+                <script>
+                  function m() {
+                    var frame = document.getElementsByTagName("IFRAME")[0]
+                    var h = frame.contentWindow.document.getElementsByTagName("IFRAME")[0];
+                    var x = document.importNode(iframe, true);
+                    console.log(x)
+                    //document.body.appendChild(x);https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH%2Fexec&followup=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH%2Fexec&flowName=GlifWebSignIn&flowEntry=ServiceLogin
+                  }
+                  
+                  </script>
                 
 </body>
 </html>
