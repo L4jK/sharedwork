@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+ font-family: Arial;
+ background: url("img_tree.gif") no-repeat fixed center;
+  animation: mymove 15s infinite;
+}
+
+@keyframes mymove {
+  from {background-color: white;}
+  50% {background-color: black;}
+  to {background-color: white;}
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* The browser window */
+.container {
+  border: 3px solid #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+   box-shadow: 3px 4px #888888;
+}
+
+/* Container for columns and the top "toolbar" */
+.row {
+  padding: 10px;
+  background: #f1f1f1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: right;
+}
+
+.left {
+  width: 18%;
+}
+
+.right {
+  width: 3%;
+}
+
+.middle {
+  width: 75%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Three dots */
+.dot {
+  margin-top: 4px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Style the input field */
+input[type=text] {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: white;
+  margin-top: -8px;
+  height: 25px;
+  color: #666;
+  padding: 5px;
+}
+
+/* Three bars (hamburger menu) */
+.bar {
+  width: 17px;
+  height: 3px;
+  background-color: #aaa;
+  margin: 3px 0;
+  display: block;
+}
+
+/* Page content */
+.content {
+  min-width: 270px;
+  min-height: 150px;
+  padding: 0px 0px 0px 0px;
+  background-color: #000;
+  color: #fff;
+  overflow-wrap: anywhere;
+  
+}
+#mydiv {
+  position: absolute;
+  z-index: 9;
+}
+
+#mydivheader {
+  cursor: move;
+  z-index: 10;
+}
+</style>
+</head>
+<body>
+
+<div id="mydiv" class="container">
+  <div id="mydivheader" class="row">
+    <div class="column left">
+    <span class="dot" style="background:#ED594A;"></span>
+      <span class="dot" style="background:#FDD800;"></span>
+      <span class="dot" style="background:#5AC05A;"></span>
+    
+      
+    </div>
+    <div class="column middle">
+      <input type="text" value="https://l4jk.github.io/console/">
+    </div>
+    <div class="column right">
+      <div style="float:right">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <textarea class="content">
+    Browser Window
+    How to create a detailed browser window look with CSS.
+  </textarea>
+</div>
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+</body>
+</html> 
