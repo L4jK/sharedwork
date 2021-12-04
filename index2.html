@@ -162,6 +162,12 @@
           }
         }
         </script>
+        <script>
+            function myFunctionc() {
+              var x = document.getElementsByTagName("body");
+              x.style.backgroundColor = "red";
+            }
+            </script>
     <div id="output"></div>
     <div class="container" onclick="settings(this)">
         <div class="bar1"></div>
@@ -172,7 +178,7 @@
       <div id="id01" class="modal">
         
         <p class="modal-content animate">
-          oi
+            <button onclick="myFunctionc()">Try it</button>
         </p>
       </div>
       <div id="snackbar">Some text some message..</div>
