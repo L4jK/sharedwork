@@ -129,7 +129,55 @@
 		background-position: 0% 50%;
 	}
 }
+/* Style the tab */
+.tabmodal {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
 
+/* Style the buttons inside the tab */
+.tabmodal button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tabmodal button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tabmodal button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabmodalcontent {
+   display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
         </style>
 </head>
 <body>
@@ -180,6 +228,24 @@
               x.style = "background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);animation:gradient 15s ease infinite;background-size:400% 400%";
             }
             </script>
+            <script>
+              function opentabmodal(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabmodalcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tabmodallinks");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+              }
+              
+              // Get the element with id="defaultOpen" and click on it
+              document.getElementById("defaultOpen").click();
+              </script>
     <div id="output"></div>
     <div class="container" onclick="settings(this)">
         <div class="bar1"></div>
@@ -190,6 +256,27 @@
       <div id="id01" class="modal">
         
         <p class="modal-content animate">
+          <div class="tabmodal">
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'London')" id="defaultOpen">London</button>
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'Paris')">Paris</button>
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="tabmodalcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabmodalcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabmodalcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
             <button onclick="myFunctionc()">Try it</button>
         </p>
       </div>
