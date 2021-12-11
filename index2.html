@@ -229,7 +229,7 @@
         <script>
             function backgroundchange(type) {
               var x = document.body.style;
-              var y = document.getElementsByTagName("favcolor").value;
+              var y = document.getElementById("favcolor").value;
               if(type=="solid"){
                 alert(y);
                 x.backgroundColor = y;
