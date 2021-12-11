@@ -228,7 +228,7 @@
         </script>
         <script>
             function backgroundchange(type,color1,color2,color3,color4) {
-              var x = document.getElementsByTagName("body").style();
+              var x = document.getElementsByTagName("body").style;
               if(type==solid){
                 x.backgroundcolor = color1;
               }else if(type==gradient){
@@ -283,7 +283,7 @@
 <div id="background" class="tabmodalcontent">
   <h3>background</h3>
   <p>Set background color.</p>
-  <button onclick="backgroundchange()">Try it</button>
+  <button onclick="backgroundchange('solid','#ffffff')">Try it</button>
   <label for="favcolor">Select your favorite color:</label>
   <input type="color" id="favcolor" name="favcolor" value="#ffffff" onchange="backgroundchange('solid',this)">
 </div>
