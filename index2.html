@@ -11,7 +11,7 @@
         
         text-shadow: 2px 2px 4px #000000;
         mix-blend-mode: difference;
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
@@ -48,7 +48,7 @@
           transform: rotate(45deg) translate(-8px, -8px);
         }
         
-        /* The Modal (background) background-color: #555;*/
+        /* The Modal (background) background-color: #555;background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
         .modal {
           display: none; /* Hidden by default */
           position: fixed; /* Stay in place */
@@ -237,15 +237,15 @@
         }
         </script>
         <script>
-            function backgroundchange(type) {
+            function backgroundchange() {
               var x = document.body.style;
-              var y = document.getElementById("favcolor").value;
-              if(type=="solid"){
-                //alert(y);
-                x.backgroundColor = y;
-              }else if(type=="gradient"){
-              x = "background:linear-gradient(-45deg, "+color1+", "+color2+", "+color3+", "+color4+");animation:gradient 15s ease infinite;background-size:400% 400%";
-            }
+              var color1 = document.getElementById("favcolor1").value;
+              var color2 = document.getElementById("favcolor2").value;
+              var color3 = document.getElementById("favcolor3").value;
+              var color4 = document.getElementById("favcolor4").value;
+              
+                x.backgroundColor = "linear-gradient(-45deg, "+color1+", "+color2+", "+color3+", "+color4+");"
+            
           }
             </script>
             <script>
@@ -295,9 +295,12 @@
 <div id="background" class="tabmodalcontent">
   <h3>background</h3>
   <p>Set background color.</p>
-  <button onclick="backgroundchange('solid')">Try it</button>
-  <label for="favcolor">Select your favorite color:</label>
-  <input type="color" id="favcolor" name="favcolor" value="#555555" onchange="backgroundchange('solid')">
+  
+  <label for="favcolor1">Select your favorite color:</label>
+  <input type="color" id="favcolor1" name="favcolor1" value="#ee7752" onchange="backgroundchange()">
+  <input type="color" id="favcolor2" name="favcolor2" value="#e73c7e" onchange="backgroundchange()">
+  <input type="color" id="favcolor3" name="favcolor3" value="#23a6d5" onchange="backgroundchange()">
+  <input type="color" id="favcolor4" name="favcolor4" value="#23d5ab" onchange="backgroundchange()">
 </div>
 
             
