@@ -334,23 +334,7 @@
               
                 
     <div id="output"></div>
-    <div class="custom-select" style="width:200px;">
-      <select>
-        <option value="0">Select car:</option>
-        <option value="1">Audi</option>
-        <option value="2">BMW</option>
-        <option value="3">Citroen</option>
-        <option value="4">Ford</option>
-        <option value="5">Honda</option>
-        <option value="6">Jaguar</option>
-        <option value="7">Land Rover</option>
-        <option value="8">Mercedes</option>
-        <option value="9">Mini</option>
-        <option value="10">Nissan</option>
-        <option value="11">Toyota</option>
-        <option value="12">Volvo</option>
-      </select>
-    </div>
+    
     <div class="container" onclick="settings(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -361,16 +345,32 @@
         
         <div class="modal-content animate">
           <div class="tabmodal">
-  <button class="tabmodallinks" onclick="opentabmodal(event, 'London')" id="defaultOpen">London</button>
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')" id="defaultOpen">config drive</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'Paris')">Paris</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'background')">background</button>
 </div>
 
-<div id="London" class="tabmodalcontent">
-  <h3>London</h3>
+<div id="configdrive" class="tabmodalcontent">
+  <h3>config drive</h3>
   
-  <p>London is the capital city of England.</p>
- 
+  <p>configure pastas e compartilhamentos.</p>
+  <div class="custom-select" style="width:200px;">
+    <select>
+      <option value="0">Select car:</option>
+      <option value="1">Audi</option>
+      <option value="2">BMW</option>
+      <option value="3">Citroen</option>
+      <option value="4">Ford</option>
+      <option value="5">Honda</option>
+      <option value="6">Jaguar</option>
+      <option value="7">Land Rover</option>
+      <option value="8">Mercedes</option>
+      <option value="9">Mini</option>
+      <option value="10">Nissan</option>
+      <option value="11">Toyota</option>
+      <option value="12">Volvo</option>
+    </select>
+  </div>
 </div>
 
 <div id="Paris" class="tabmodalcontent">
@@ -394,7 +394,7 @@
       </div>
       <div id="snackbar">Some text some message..</div>
       <button onclick="myFunction1()">Show Snackbar</button>
-      
+
       <script>
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
