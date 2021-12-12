@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sharedwork2</title>
     <style>
-      
-      body{
+      :root {
         --cor-bg-1:#ee7752;
         --cor-bg-2:#e73c7e;
         --cor-bg-3:#23a6d5;
         --cor-bg-4:#23d5ab;
+      }
+      body{
         color: #ffffff;
         
         text-shadow: 2px 2px 4px #000000;
@@ -243,13 +244,12 @@
         </script>
         <script>
             function backgroundchange() {
-              var x = document.body.style;
-              var color1 = document.getElementById("favcolor1").value;
-              var color2 = document.getElementById("favcolor2").value;
-              var color3 = document.getElementById("favcolor3").value;
-              var color4 = document.getElementById("favcolor4").value;
-              
-                x = '"--cor-bg-1:'+color1+';"'
+              // Get the root element
+              var r = document.querySelector(':root');
+              r.style.setProperty('--cor-bg-1', document.getElementById("favcolor1").value);
+              r.style.setProperty('--cor-bg-2', document.getElementById("favcolor2").value);
+              r.style.setProperty('--cor-bg-3', document.getElementById("favcolor3").value);
+              r.style.setProperty('--cor-bg-4', document.getElementById("favcolor4").value);
             
           }
             </script>
