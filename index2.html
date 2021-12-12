@@ -331,26 +331,7 @@
               // Get the element with id="defaultOpen" and click on it
               document.getElementById("defaultOpen").click();
               </script>
-              <script>
-                google.script.run
-                          .withSuccessHandler(driveselectfolder)
-                          .withFailureHandler(onFailure)
-                          .autofunction(
-                              '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}return JSON.stringify(foldersm)}"}'
-                          )
-                          function driveselectfolder(folders) {     
-                let jText = '{"jsonResponse":'+folders+'}';
-                
-                const obj = JSON.parse(jText);
-                let jLen = Object.keys(obj.jsonResponse).length;
-                let selectcreat = "<select>";
-                for (let i = 0; i < jLen; i++) {
-                  selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
-                }
-                selectcreat += "</select>";
-                document.getElementById("divselect").innerHTML = selectcreat;
-              }
-                </script>
+              
                 
     <div id="output"></div>
     
@@ -399,7 +380,26 @@
       </div>
       <div id="snackbar">Some text some message..</div>
       <button onclick="myFunction1()">Show Snackbar</button>
-
+      <script>
+        google.script.run
+                  .withSuccessHandler(driveselectfolder)
+                  .withFailureHandler(onFailure)
+                  .autofunction(
+                      '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}return JSON.stringify(foldersm)}"}'
+                  )
+                  function driveselectfolder(folders) {     
+        let jText = '{"jsonResponse":'+folders+'}';
+        
+        const obj = JSON.parse(jText);
+        let jLen = Object.keys(obj.jsonResponse).length;
+        let selectcreat = "<select>";
+        for (let i = 0; i < jLen; i++) {
+          selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
+        }
+        selectcreat += "</select>";
+        document.getElementById("divselect").innerHTML = selectcreat;
+      }
+        </script>
       <script>
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
