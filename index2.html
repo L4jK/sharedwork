@@ -262,26 +262,26 @@
 </head>
 <body>
     <script>
-        function onSuccess(numUnread) {
-          var div = document.getElementById('output');
-          div.innerHTML = 'resposta ok: ' + numUnread
-              + ' oi.';
-        }
+        //function onSuccess(numUnread) {
+        //  var div = document.getElementById('output');
+        //  div.innerHTML = 'resposta ok: ' + numUnread
+        //      + ' oi.';
+       // }
         function onFailure(error) {
         var div = document.getElementById('output');
         div.innerHTML = "ERROR: " + error.message;
       }
-
-        google.script.run
-            .withSuccessHandler(onSuccess)
-            .withFailureHandler(onFailure)
-            .autofunction(
-                '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}return JSON.stringify(foldersm)}"}'
+//
+      //  google.script.run
+      //      .withSuccessHandler(onSuccess)
+      //      .withFailureHandler(onFailure)
+      //      .autofunction(
+      //          '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}return JSON.stringify(foldersm)}"}'
             //var folders = DriveApp.getFolders();while (folders.hasNext()){var folder = folders.next();return folder.getName();}
             //return ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL).getAuthorizationStatus()
             //return Session.getActiveUser().getEmail()
             //
-            );
+      //      );
       </script>
       <script>
         function myFunction1() {
@@ -331,7 +331,26 @@
               // Get the element with id="defaultOpen" and click on it
               document.getElementById("defaultOpen").click();
               </script>
-              
+              <script>
+                google.script.run
+                          .withSuccessHandler(driveselectfolder)
+                          .withFailureHandler(onFailure)
+                          .autofunction(
+                              '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}return JSON.stringify(foldersm)}"}'
+                          )
+                          function driveselectfolder(folders) {     
+                let jText = '{"jsonResponse":'+folders+'}';
+                
+                const obj = JSON.parse(jText);
+                let jLen = Object.keys(obj.jsonResponse).length;
+                let selectcreat = "<select>";
+                for (let i = 0; i < jLen; i++) {
+                  selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
+                }
+                selectcreat += "</select>";
+                document.getElementById("divselect").innerHTML = selectcreat;
+              }
+                </script>
                 
     <div id="output"></div>
     
@@ -354,22 +373,8 @@
   <h3>config drive</h3>
   
   <p>configure pastas e compartilhamentos.</p>
-  <div class="custom-select" style="width:200px;">
-    <select>
-      <option value="0">Select car:</option>
-      <option value="1">Audi</option>
-      <option value="2">BMW</option>
-      <option value="3">Citroen</option>
-      <option value="4">Ford</option>
-      <option value="5">Honda</option>
-      <option value="6">Jaguar</option>
-      <option value="7">Land Rover</option>
-      <option value="8">Mercedes</option>
-      <option value="9">Mini</option>
-      <option value="10">Nissan</option>
-      <option value="11">Toyota</option>
-      <option value="12">Volvo</option>
-    </select>
+  <div id="divselect" class="custom-select" style="width:200px;">
+    
   </div>
 </div>
 
