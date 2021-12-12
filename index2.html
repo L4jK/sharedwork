@@ -328,8 +328,7 @@
                 evt.currentTarget.className += " active";
               }
               
-              // Get the element with id="defaultOpen" and click on it
-              document.getElementById("defaultOpen").click();
+              
               </script>
               
                 
@@ -345,7 +344,7 @@
         
         <div class="modal-content animate">
           <div class="tabmodal">
-  <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')" id="defaultOpen">config drive</button>
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')" id="modaltabdefaultOpen">config drive</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'Paris')">Paris</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'background')">background</button>
 </div>
@@ -403,6 +402,8 @@
       
         
         function funInit() {
+          // Get the element with id="defaultOpen" and click on it
+          document.getElementById("modaltabdefaultOpen").click();
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
         x = document.getElementsByClassName("custom-select");
