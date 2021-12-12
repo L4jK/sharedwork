@@ -332,7 +332,6 @@
               document.getElementById("defaultOpen").click();
               </script>
               <script>
-                try {
                 var x, i, j, l, ll, selElmnt, a, b, c;
                 /*look for any elements with the class "custom-select":*/
                 x = document.getElementsByClassName("custom-select");
@@ -411,10 +410,6 @@
                 /*if the user clicks anywhere outside the select box,
                 then close all select boxes:*/
                 document.addEventListener("click", closeAllSelect);
-              }
-              catch(err) {
-                   alert(err.message)
-                }
                 </script>
                 
     <div id="output"></div>
