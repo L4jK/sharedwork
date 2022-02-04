@@ -25,7 +25,10 @@
         <script>
                 function myFunction() {
                   var frame = document.getElementById(frame)
-                  alert('The iframe could not be loaded. '+frame.contentWindow.document.getElementsByTagName(body).className);
+                  var framey = (frame.contentWindow || frame.contentDocument);
+                    if (framey.document)framey = framey.document;
+                    var framebodyclass = framey.body.className;
+                  alert('The iframe could not be loaded. '+framebodyclass);
                 }
                 </script>
                 <script>
