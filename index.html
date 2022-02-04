@@ -20,11 +20,12 @@
 </head>
 <body>   
     
-        <iframe class="responsive-iframe" src="https://script.google.com/macros/s/AKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH/exec" onload="myFunction()">
+        <iframe id="frame" class="responsive-iframe" src="https://script.google.com/macros/s/AKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH/exec" onload="myFunction()">
         </iframe>
         <script>
                 function myFunction() {
-                  alert('The iframe could not be loaded.');
+                  var frame = document.getElementById(frame)
+                  alert('The iframe could not be loaded.'+frame.console);
                 }
                 </script>
                 <script>
