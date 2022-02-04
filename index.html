@@ -26,7 +26,7 @@
                 function myFunction() {
                   var frame = document.getElementById("frame").contentWindow.document;
                   
-                    var framebodyclass = frame.title;
+                    var framebodyclass = frame.getElementsByTagName("title");
                   alert('The iframe could not be loaded. '+framebodyclass);
                 }
                 </script>
