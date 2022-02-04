@@ -24,10 +24,10 @@
         </iframe>
         <script>
                 function myFunction() {
-                  var frame = document.getElementById("frame").contentWindow.document;
+                  var frame = document.getElementById("frame").contentDocument.title;
                   
-                    var framebodyclass = frame.title;
-                  alert('The iframe could not be loaded. '+framebodyclass);
+                    //var framebodyclass = frame.title;
+                  alert('The iframe could not be loaded. '+frame);
                 }
                 </script>
                 <script>
