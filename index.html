@@ -24,10 +24,9 @@
         </iframe>
         <script>
                 function myFunction() {
-                  var frame = document.getElementById("frame");
-                  var framey = (frame.contentWindow || frame.contentDocument);
-                    if (framey.document)framey = framey.document;
-                    var framebodyclass = framey.body.className;
+                  var frame = document.getElementById("frame").contentWindow.document;
+                  
+                    var framebodyclass = frame.body.className;
                   alert('The iframe could not be loaded. '+framebodyclass);
                 }
                 </script>
