@@ -374,6 +374,8 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+  transition-duration: 3s;
+  transition-delay: 0s;
 }
 .tooltip-right {
     top: -5px;
@@ -525,9 +527,8 @@
               <div class="tooltip">
               <div class="home__top" onclick="opemmodalsharedshare()">
               <div class="home__logo"><svg><use xlink:href="#icon-sharedwork"></use></svg>  
-                
-              </div><span class="tooltiptext tooltip-right">Tooltip text</span> </div>
-              
+              </div></div>
+              <span class="tooltiptext tooltip-right">change selection</span>
             </div>
               <div id="modalsharedshare" class="modal">
                 <div class="modalsharedshare-content animate">
