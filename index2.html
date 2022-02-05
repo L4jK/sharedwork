@@ -70,7 +70,7 @@
         }
         
         /* Modal Content/Box */
-        .modal-content {
+        .modalconfig-content {
           background-color: #fefefe;
           margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
           border: 1px solid #888;
@@ -351,6 +351,15 @@
               <div class="home__top">
               <div class="home__logo"><svg><use xlink:href="#icon-sharedwork"></use></svg>   
               </div>
+
+              <div id="modalsharedshare" class="modal">
+                <div class="modalsharedshare-content">
+                <button class="button_shared" style="vertical-align:middle" onclick="shared()"><span>shared with me</span></button>
+                <button class="button_share" style="vertical-align:middle" onclick="share()"><span>I share</span></button>   
+                </div>
+                </div>
+
+
     <div id="output"></div>
     
     <div class="container" onclick="settings(this)">
@@ -361,7 +370,7 @@
       
       <div id="id01" class="modal">
         
-        <div class="modal-content animate">
+        <div class="modalconfig-content animate">
           <div class="tabmodal">
   <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')" id="modaltabdefaultOpen">config drive</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'Paris')">Paris</button>
@@ -399,6 +408,9 @@
       <div id="snackbar">Some text some message..</div>
       <button onclick="myFunction1()">Show Snackbar</button>
       <script>
+        body.onload = function(){
+          opemmodalsharedshare();
+        }
         google.script.run
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
@@ -502,6 +514,19 @@
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
       }
+
+      function opemmodalsharedshare() {
+var modal = document.getElementById("modalsharedshare");
+  modal.style.display = "block";
+}
+function shared() {
+var modal = document.getElementById("modalsharedshare");
+  modal.style.display = "none";
+}
+function share() {
+var modal = document.getElementById("modalsharedshare");
+  modal.style.display = "none";
+}
         </script>
 </body>
 </html>
