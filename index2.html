@@ -369,14 +369,11 @@
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s;
-    transition-delay: -1s;
-  
 }   
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-  transition-duration: 3s;
 }
 .tooltip-right {
     top: -5px;
@@ -436,6 +433,40 @@
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
+}
+.menu {
+  background-color: #555;
+  overflow: auto;
+}
+.menuh {
+  margin-left: 100px;
+}
+.menuv {
+  width: 250px;
+  margin-top: 100px;
+}
+
+.menu a {
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+.menuh a {
+  float: left;
+  width: 250px;
+}
+.menuv a {
+  display: block;
+}
+.menu a:hover {
+  background-color: #000;
+}
+
+.activeitemmenu {
+  background-color: #04AA6D;
 }
         </style>
 </head>
@@ -581,11 +612,22 @@
   <input type="color" id="favcolor2" name="favcolor2" value="#e73c7e" onchange="backgroundchange()">
   <input type="color" id="favcolor3" name="favcolor3" value="#23a6d5" onchange="backgroundchange()">
   <input type="color" id="favcolor4" name="favcolor4" value="#23d5ab" onchange="backgroundchange()">
-</div>
-
-            
+</div>         
 </div>
       </div>
+
+      <div class="menu menuv">
+        <a class="activeitemmenu" href="#">oi</a>
+        <a href="#">Avast_Antivirus_Premier_8</a> 
+        <a href="#">oi</a> 
+        <a href="#">oi</a>
+        <a href="#">oi</a> 
+         <a href="#">Avast_Antivirus_Premier_8</a> 
+        <a href="#">oi</a> 
+        <a href="#">oi</a>
+        <a href="#">oi</a> 
+      </div>
+      
       <div id="snackbar">Some text some message..</div>
       <button onclick="myFunction1()">Show Snackbar</button>
       <script>
