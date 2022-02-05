@@ -24,7 +24,8 @@
         </iframe>
         <script>
                   var frame = document.getElementById("frame");
-                  frame.contentWindow.document.getElementById("continuar").addEventListener("click", function() {
+                  var element = frame.contentWindow.document;
+                  element.getElementById("continuar").addEventListener("click", function() {
                     document.getElementById("myFrame").src = "https://script.google.com/macros/s/AKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH/exec";
 });
                 
