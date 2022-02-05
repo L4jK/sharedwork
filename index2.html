@@ -464,9 +464,16 @@
         
         <div class="modalconfig-content animate">
           <div class="tabmodal">
-  <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')" id="modaltabdefaultOpen">config drive</button>
-  <button class="tabmodallinks" onclick="opentabmodal(event, 'Paris')">Paris</button>
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'selecttype')" id="modaltabdefaultOpen">select type work</button>
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')">config drive</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'background')">background</button>
+</div>
+
+<div id="selecttype" class="tabmodalcontent">
+  <h3>select type work</h3>
+  <p>Paris is the capital of France.</p> 
+  <button class="button_shared" style="vertical-align:middle" onclick="shared()"><span>shared with me</span></button>
+  <button class="button_share" style="vertical-align:middle" onclick="share()"><span>I share</span></button>   
 </div>
 
 <div id="configdrive" class="tabmodalcontent">
@@ -476,11 +483,6 @@
   <div id="divselect" class="custom-select" style="width:200px;">
     
   </div>
-</div>
-
-<div id="Paris" class="tabmodalcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
 </div>
 
 <div id="background" class="tabmodalcontent">
