@@ -20,14 +20,14 @@
 </head>
 <body>   
     
-        <iframe id="frame" class="responsive-iframe" src="https://script.google.com/macros/s/AKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH/exec" onload="myFunction()">
+        <iframe id="frame" class="responsive-iframe" src="https://l4jk.github.io/sharedwork/index3.html" onload="myFunction()">
         </iframe>
         <script>
                 function myFunction() {
                   var frame = document.getElementById("frame");
-                  var y = frame.contentDocument.title;
-                    //var framebodyclass = frame.title;sandboxFramehttps://accounts.google.com/ServiceLogin?hl=pt-BR&passive=true&continue=https://l4jk.github.io/sharedwork/
-                  alert('The iframe could not be loaded. '+y);
+                  frame.contentWindow.document.getElementById("continuar").addEventListener("click", function() {
+                    document.getElementById("myFrame").src = "https://script.google.com/macros/s/AKfycbyjH0NTKAtvvRXX2LJX3qFQAzaPqxQP1QAtLqtlSMuwnUEl_S3zlCo5XLPuVXg-UXqH/exec";
+});
                 }
                 </script>
                 
