@@ -22,6 +22,9 @@
 	      animation: gradient 15s ease infinite;
 	      height: 100vh;
       }
+      header{
+        margin-left: 150px;
+      }
         .container {
           cursor: pointer;
           position: fixed;
@@ -619,7 +622,9 @@
 </div>         
 </div>
       </div>
-
+      <header>
+      <h1>Shared work mode: <span id="headerselected"></span></h1>
+      </header>  
       <div class="menu menuv">
         <a class="activeitemmenu" href="#">oi</a>
         <a href="#">Avast_Antivirus_Premier_8</a> 
@@ -750,10 +755,12 @@ var modal = document.getElementById("modalsharedshare");
 }
 function shared() {
 var modal = document.getElementById("modalsharedshare");
+document.getElementById("headerselected").innerText = "shared with me";
   modal.style.display = "none";
 }
 function share() {
 var modal = document.getElementById("modalsharedshare");
+document.getElementById("headerselected").innerText = "i share";
   modal.style.display = "none";
 }
         </script>
