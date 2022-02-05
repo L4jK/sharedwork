@@ -369,6 +369,8 @@
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s;
+    transition-delay: -1s;
+  transition-duration: 3s;
 }   
 
 .tooltip:hover .tooltiptext {
@@ -378,8 +380,6 @@
 .tooltip-right {
     top: -5px;
     left: 125%;
-    transition-delay: -1s;
-  transition-duration: 3s;
 }
 .tooltip-right::after {
     content: "";
