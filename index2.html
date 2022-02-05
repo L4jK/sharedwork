@@ -260,6 +260,98 @@
 }
 .home__top{align-items: center; display: flex; justify-content: space-between; position: absolute; padding: 1rem 2rem; top: 0; left: 0; width: 100%; z-index: 9;}
 .home__logo svg{width: 119px; height: 150px;}
+
+.modalsharedshare-content {
+  background-color: #fefefe;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: auto;
+  max-width: 495px;
+  min-width: 280px;
+}
+
+
+.button_shared {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 270px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button_shared span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button_shared span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button_shared:hover span {
+  padding-left: 25px;
+}
+
+.button_shared:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+.button_share {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button_share span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button_share span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button_share:hover span {
+  padding-right: 25px;
+}
+
+.button_share:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
         </style>
 </head>
 <body onload="start()">
