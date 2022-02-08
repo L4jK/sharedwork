@@ -28,6 +28,9 @@
         border-radius: 0 0 8px 8px;
         width: auto;
       }
+      #headerselected{
+        text-shadow: 2px 2px 4px #ffffff;
+      }
         .btn_menu_config {
           cursor: pointer;
           position: fixed;
@@ -815,7 +818,6 @@ function shared() {
 var modal = document.getElementById("modalsharedshare");
 var span = document.getElementById("headerselected");
   span.style.color =  "#4CAF50";
-  span.style.text.shadow = "2px 2px 4px #ffffff";
   span.innerText = "shared with me";
   modal.style.display = "none";
 }
@@ -823,7 +825,6 @@ function share() {
 var modal = document.getElementById("modalsharedshare");
 var span = document.getElementById("headerselected");
   span.style.color = "#f4511e";
-  span.style.text.shadow = "2px 2px 4px #ffffff";
   span.innerText = "i share";
   modal.style.display = "none";
 }
