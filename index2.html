@@ -358,6 +358,7 @@
   opacity: 1;
   right: 0;
 }
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -812,12 +813,16 @@ var modal = document.getElementById("modalsharedshare");
 }
 function shared() {
 var modal = document.getElementById("modalsharedshare");
-document.getElementById("headerselected").innerText = "shared with me";
+var span = document.getElementById("headerselected");
+  span.style.color =  "#4CAF50";
+  span.innerText = "shared with me";
   modal.style.display = "none";
 }
 function share() {
 var modal = document.getElementById("modalsharedshare");
-document.getElementById("headerselected").innerText = "i share";
+var span = document.getElementById("headerselected");
+  span.style.color = "#f4511e";
+  span.innerText = "i share";
   modal.style.display = "none";
 }
 function menuposition(p) {
