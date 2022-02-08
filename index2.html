@@ -482,12 +482,13 @@
   background-color: #04AA6D;
 }
 .main_content_classh{
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-left: 5;
+ 
+  margin-top: 10px;
+  
+  height:67vh;
   border: 1px solid #dbdce0; 
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px 8px 0 0;
 }
 .main_content_classv{
   position: absolute;
@@ -517,6 +518,11 @@
 @media only screen and (max-width: 600px) {
   .main_content_classv {
     width: 45vw;
+  }
+}
+@media only screen and (max-width: 655px) {
+  .main_content_classh {
+    height:60vh;
   }
 }
         </style>
@@ -632,7 +638,7 @@
           <div class="tabmodal">
   <button class="tabmodallinks" onclick="opentabmodal(event, 'selecttype')" id="modaltabdefaultOpen">select type work</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')">config drive</button>
-  <button class="tabmodallinks" onclick="opentabmodal(event, 'background')">background</button>
+  <button class="tabmodallinks" onclick="opentabmodal(event, 'styleconfig')">style config</button>
 </div>
 
 <div id="selecttype" class="tabmodalcontent">
@@ -651,7 +657,15 @@
   </div>
 </div>
 
-<div id="background" class="tabmodalcontent">
+<div id="styleconfig" class="tabmodalcontent">
+  <h3>navegation config</h3>
+  <p>Set navegation position.</p>
+  <input type="radio" id="menuh" name="fav_pos_nav" value="Horizontal" onclick="menuposition(this)">
+    <label for="menuh">Horizontal</label>
+    <input type="radio" id="menuv" name="fav_pos_nav" value="Vertical" onclick="menuposition(this)">
+    <label for="menuv">Vertical</label>
+  <br>
+
   <h3>background</h3>
   <p>Set background color.</p>
   
@@ -666,7 +680,7 @@
       <header>
       <h1>Shared work mode: <span id="headerselected"></span></h1>
       </header>  
-      <div class="menu menuv">
+      <div id="nav_menu"class="menu menuh">
         <a class="activeitemmenu" href="#">oi</a>
         <a href="#">Avast_Antivirus_Premier_8</a> 
         <a href="#">oi</a> 
@@ -679,13 +693,14 @@
         <a href="#">Avast_Antivirus_Premier_8</a> 
       </div>
 
-      <div id="main_content" class="main_content_classv">oi</div>
+      <div id="main_content" class="main_content_classh">oi</div>
 
       <div id="snackbar">Some text some message..</div>
       <button onclick="myFunction1()">Show Snackbar</button>
       <script>
        function start(){
           opemmodalsharedshare();
+          menuposition();
         };
         google.script.run
                   .withSuccessHandler(driveselectfolder)
@@ -804,6 +819,31 @@ function share() {
 var modal = document.getElementById("modalsharedshare");
 document.getElementById("headerselected").innerText = "i share";
   modal.style.display = "none";
+}
+function menuposition(p) {
+  const element_menu = document.getElementById("nav_menu");
+  const element_main_content = document.getElementById("main_content");
+  if (p == ""){
+    if (element_menu.className == "menu menuh") {
+    document.getElementById("menuh").checked = true;
+    document.getElementById("menuv").checked = false;
+  } else {
+    document.getElementById("menuv").checked = true;
+    document.getElementById("menuh").checked = false;
+  }
+  } else {
+  if (p == "Horizontal") {
+    element_menu.className = "menu menuh";
+    element_main_content.className = "main_content_classh";
+    document.getElementById("menuh").checked = true;
+    document.getElementById("menuv").checked = false;
+  } else {
+    element_menu.className = "menu menuv";
+    element_main_content.className = "main_content_classv";
+    document.getElementById("menuv").checked = true;
+    document.getElementById("menuh").checked = false;
+  }
+  }
 }
         </script>
 </body>
