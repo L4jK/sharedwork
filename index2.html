@@ -823,7 +823,8 @@ document.getElementById("headerselected").innerText = "i share";
 function menuposition(p) {
   const element_menu = document.getElementById("nav_menu");
   const element_main_content = document.getElementById("main_content");
-  if (p == ""){
+ 
+  if (p == undefined){
     if (element_menu.className == "menu menuh") {
     document.getElementById("menuh").checked = true;
     document.getElementById("menuv").checked = false;
@@ -832,7 +833,7 @@ function menuposition(p) {
     document.getElementById("menuh").checked = false;
   }
   } else {
-  if (p == "Horizontal") {
+  if (p.value == "Horizontal") {
     element_menu.className = "menu menuh";
     element_main_content.className = "main_content_classh";
     document.getElementById("menuh").checked = true;
