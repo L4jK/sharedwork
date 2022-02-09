@@ -530,6 +530,9 @@
     top: 150px;
   }
 }
+.div_inline_block{
+  display: inline-block;
+}
         </style>
 </head>
 <body onload="start()">
@@ -663,6 +666,7 @@
 </div>
 
 <div id="styleconfig" class="tabmodalcontent">
+  <div class="div_inline_block">
   <h3>navegation config</h3>
   <p>Set navegation position.</p>
   <input type="radio" id="menuh" name="fav_pos_nav" value="Horizontal" onclick="menuposition(this)">
@@ -670,7 +674,8 @@
     <input type="radio" id="menuv" name="fav_pos_nav" value="Vertical" onclick="menuposition(this)">
     <label for="menuv">Vertical</label>
   <br>
-
+</div>
+<div class="div_inline_block">
   <h3>background</h3>
   <p>Set background color.</p>
   
@@ -679,6 +684,7 @@
   <input type="color" id="favcolor2" name="favcolor2" value="#e73c7e" onchange="backgroundchange()">
   <input type="color" id="favcolor3" name="favcolor3" value="#23a6d5" onchange="backgroundchange()">
   <input type="color" id="favcolor4" name="favcolor4" value="#23d5ab" onchange="backgroundchange()">
+</div>
 </div>         
 </div>
       </div>
