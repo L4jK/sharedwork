@@ -568,8 +568,10 @@
         //      + ' oi.';
        // }
         function onFailure(error) {
-        var div = document.getElementById('output');
+        var div = document.getElementById("snackbar");
         div.innerHTML = "ERROR: " + error.message;
+        div.className = "show";
+          setTimeout(function(){ div.className = div.className.replace("show", ""); }, 3000);
       }
 //
       //  google.script.run
@@ -583,14 +585,6 @@
             //
       //      );
       </script>
-      <script>
-        function myFunction1() {
-          var x = document.getElementById("snackbar");
-          x.className = "show";
-          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-        }
-        </script>
-        
         <script>
         function settings(x) {
           x.classList.toggle("change");
@@ -720,7 +714,7 @@
 
       <div id="main_content" class="main_content_classh">oi</div>
 
-      <div id="snackbar">Some text some message..</div>
+      <div id="snackbar"></div>
       <button onclick="myFunction1()">Show Snackbar</button>
       <script>
        function start(){
