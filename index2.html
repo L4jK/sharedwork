@@ -756,9 +756,8 @@ var span = document.getElementById("headerselected");
 }
         
                   function driveselectfolder(folders) {   
-                    alert(folders);
+                    
         let jText = '{"jsonResponse":'+folders+'}';
-        
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
         let selectcreat = "<select>";
