@@ -901,9 +901,10 @@ function menuposition(p) {
 }
 function clone(id,divs) {
   const node = document.getElementById(id);
-  let numb = document.getElementById(divs).childElementCount;
-  const clone = node.cloneNode(false);
-  document.getElementById(divs).appendChild(clone);
+  const divsg = document.getElementById(divs);
+  let numb = divsg.childElementCount;
+  const clone = node.cloneNode(true);
+  divsg.insertBefore(divsg.appendChild(clone),document.getElementById("divselects_1"));
   //alert(document.getElementById("divselects_1")[0].id)
   //document.getElementById("divselects_1")[1].classList.add("clone");
   //document.getElementsByClassName("clone")[0].id = "divselects_"+numb-2;
