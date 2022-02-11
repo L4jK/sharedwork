@@ -680,7 +680,7 @@
   <div id="divselect" class="custom-select">
     
   </div>
-  
+
   <button class="button_add" onclick="clone('divselect,configdrive_child')">+</button>
 </div>
 
@@ -895,7 +895,7 @@ function menuposition(p) {
 }
 function clone(id,divs) {
   const node = document.getElementById(id);
-  const clone = node.cloneNode(true);
+  const clone = node.cloneNode("true");
   document.getElementById(divs).appendChild(clone);
 }
         </script>
