@@ -902,13 +902,13 @@ function menuposition(p) {
 function clone(id,divs) {
   const node = document.getElementById(id);
   let numb = document.getElementById(divs).childElementCount;
-  alert(numb-3)
+  //alert(numb-3)
   const clone = node.cloneNode(true);
   document.getElementById(divs).appendChild(clone);
-  document.getElementById("divselects_1")[1].setAttribute("id", "divselects_"+numb-3);
-  document.getElementById("divselect_1")[1].setAttribute("id", "divselect_"+numb-3);
-  document.getElementById("for_parent_1")[1].setAttribute("id", "for_parent_"+numb-3);
-  document.getElementById("for_menu_1")[1].setAttribute("id", "for_menu_"+numb-3);
+  document.getElementById("divselects_1")[1].setAttribute("id", "divselects_"+numb-2);
+  document.getElementById("divselect_1")[1].setAttribute("id", "divselect_"+numb-2);
+  document.getElementById("for_parent_1")[1].setAttribute("id", "for_parent_"+numb-2);
+  document.getElementById("for_menu_1")[1].setAttribute("id", "for_menu_"+numb-2);
   
 }
         </script>
