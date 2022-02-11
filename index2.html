@@ -902,9 +902,9 @@ function menuposition(p) {
 function clone(id,divs) {
   const node = document.getElementById(id);
   let numb = document.getElementById(divs).childElementCount;
-  //alert(numb-3)
   const clone = node.cloneNode(true);
   document.getElementById(divs).appendChild(clone);
+  alert(document.getElementById("divselects_1")[0].id)
   document.getElementById("divselects_1")[1].classList.add("clone");
   document.getElementsByClassName("clone")[0].id = "divselects_"+numb-2;
   document.getElementById("divselects_"+numb-2).classList.remove("clone");
