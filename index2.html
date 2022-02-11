@@ -677,15 +677,15 @@
   <h3>config drive</h3>
   
   <p>configure pastas e compartilhamentos.</p>
-  <div id="divselects_1">
-  <div id="divselect_1" class="custom-select">
+  <div id="divselects_1" class="matriz">
+  <div id="divselect_1" class="matriz custom-select">
   
   </div>
-  <input type="radio" id="for_parent_1" name="rfor_parent_1" value="parent">
-    <label for="for_parent_1">Parent</label>
+  <input type="radio" id="for_parent_1" class="matriz" name="rfor_parent_1" value="parent">
+    <label for="for_parent_1" class="matriz">Parent</label>
   <br>
-    <input type="radio" id="for_menu_1" name="rfor_menu_1" value="menu">
-    <label for="for_menu_1">Menu</label>
+    <input type="radio" id="for_menu_1" class="matriz" name="rfor_menu_1" value="menu">
+    <label for="for_menu_1" class="matriz">Menu</label>
   </div>
   <button class="button_add" onclick="clone('divselects_1','configdrive_child')">+</button>
 </div>
@@ -905,22 +905,25 @@ function clone(id,divs) {
   let numb = divsg.childElementCount;
   const clone = node.cloneNode(true);
   divsg.insertBefore(divsg.appendChild(clone),document.getElementById("divselects_1"));
-  //alert(document.getElementById("divselects_1")[0].id)
-  //document.getElementById("divselects_1")[1].classList.add("clone");
-  //document.getElementsByClassName("clone")[0].id = "divselects_"+numb-2;
-  //document.getElementById("divselects_"+numb-2).classList.remove("clone");
+  
+  
+  document.getElementsByClassName("matriz")[1].id = "divselects_"+numb-2;
+  document.getElementById("divselects_"+numb-2).classList.remove("matriz");
 
-  //document.getElementById("divselect_1")[1].classList.add("clone");
-  //document.getElementsByClassName("clone")[0].id = "divselect_"+numb-2;
-  //document.getElementById("divselect_"+numb-2).classList.remove("clone");
+  document.getElementsByClassName("matriz")[2].id = "divselect_"+numb-2;
+  document.getElementById("divselect_"+numb-2).classList.remove("matriz");
 
-  //document.getElementById("for_parent_1")[1].classList.add("clone");
-  //document.getElementsByClassName("clone")[0].id = "for_parent_"+numb-2;
-  //document.getElementById("for_parent_"+numb-2).classList.remove("clone");
+  document.getElementsByClassName("matriz")[3].id = "for_parent_"+numb-2;
+  document.getElementsByClassName("matriz")[3].name = "rfor_parent_"+numb-2;
+  document.getElementById("for_parent_"+numb-2).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[4].for = "for_parent_"+numb-2;
+  document.getElementById("for_parent_"+numb-2).classList.remove("matriz");
 
-  //document.getElementById("for_menu_1")[1].classList.add("clone");
-  //document.getElementsByClassName("clone")[0].id = "for_menu_"+numb-2;
-  //document.getElementById("for_menu_"+numb-2).classList.remove("clone");
+  document.getElementsByClassName("matriz")[5].id = "for_menu_"+numb-2;
+  document.getElementsByClassName("matriz")[5].name = "rfor_menu_"+numb-2;
+  document.getElementById("for_menu_"+numb-2).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[6].for = "for_menu_"+numb-2;
+  document.getElementById("for_menu_"+numb-2).classList.remove("matriz");
 
 }
         </script>
