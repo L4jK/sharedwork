@@ -909,7 +909,7 @@ function clone(id,divs) {
   const divsg = document.getElementById(divs);
   let numb = divsg.childElementCount;
   const clone = node.cloneNode(true);
-  divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb]);
+  divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb-1]);
   
   
   document.getElementsByClassName("matriz")[6].id = "divselects_"+(numb-2).toString();
