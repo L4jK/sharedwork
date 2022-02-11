@@ -685,10 +685,10 @@
   <div id="divselect_1" class="matriz custom-select">
   
   </div>
-  <input type="radio" id="for_parent_1" class="matriz" name="rfor_parent_1" value="parent">
+  <input type="radio" id="for_parent_1" class="matriz" name="for_radio_1" value="parent">
     <label for="for_parent_1" class="matriz">Parent</label>
   <br>
-    <input type="radio" id="for_menu_1" class="matriz" name="rfor_menu_1" value="menu">
+    <input type="radio" id="for_menu_1" class="matriz" name="for_radio_1" value="menu">
     <label for="for_menu_1" class="matriz">Menu</label>
   </div>
   <button class="button_add" onclick="clone('divselects_1','configdrive_child')">+</button>
@@ -918,13 +918,13 @@ function clone(id,divs) {
   document.getElementById("divselect_"+(numb-2).toString()).classList.remove("matriz");
 
   document.getElementsByClassName("matriz")[6].id = "for_parent_"+(numb-2).toString();
-  document.getElementsByClassName("matriz")[6].name = "rfor_parent_"+(numb-2).toString();
+  document.getElementsByClassName("matriz")[6].name = "for_radio_"+(numb-2).toString();
   document.getElementById("for_parent_"+(numb-2).toString()).classList.remove("matriz");
   document.getElementsByClassName("matriz")[6].for = "for_parent_"+(numb-2).toString();
   document.getElementById("for_parent_"+(numb-2).toString()).classList.remove("matriz");
 
   document.getElementsByClassName("matriz")[6].id = "for_menu_"+(numb-2).toString();
-  document.getElementsByClassName("matriz")[6].name = "rfor_menu_"+(numb-2).toString();
+  document.getElementsByClassName("matriz")[6].name = "for_radio_"+(numb-2).toString();
   document.getElementById("for_menu_"+(numb-2).toString()).classList.remove("matriz");
   document.getElementsByClassName("matriz")[6].for = "for_menu_"+(numb-2).toString();
   document.getElementById("for_menu_"+(numb-2).toString()).classList.remove("matriz");
