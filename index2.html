@@ -542,6 +542,17 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.button_add {
+  background:none;
+  border: none;
+  color: DodgerBlue;
+  text-align: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+.button_add:active {
+  color: #e7e7e7;
+}
         </style>
 </head>
 <body onload="start()">
@@ -662,13 +673,15 @@
 </div>
 
 <div id="configdrive" class="tabmodalcontent">
-  <div class="div_inline_block">
+  <div id="configdrive_child" class="div_inline_block">
   <h3>config drive</h3>
   
   <p>configure pastas e compartilhamentos.</p>
   <div id="divselect" class="custom-select">
     
   </div>
+  
+  <button class="button_add" onclick="clone('divselect,configdrive_child')">+</button>
 </div>
 
 </div>
@@ -879,6 +892,11 @@ function menuposition(p) {
     document.getElementById("menuh").checked = false;
   }
   }
+}
+function clone(id,divs) {
+  const node = document.getElementById(id);
+  const clone = node.cloneNode(true);
+  document.getElementById(divs).appendChild(clone);
 }
         </script>
 </body>
