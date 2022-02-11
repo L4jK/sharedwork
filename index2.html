@@ -921,13 +921,13 @@ function clone(id,divs) {
   document.getElementsByClassName("matriz")[6].name = "for_radio_"+(numb-2).toString();
   document.getElementById("for_parent_"+(numb-2).toString()).classList.remove("matriz");
   document.getElementsByClassName("matriz")[6].setAttribute("for", "for_parent_"+(numb-2).toString());
-  document.getElementById("for_parent_"+(numb-2).toString()).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[6].classList.remove("matriz");
 
   document.getElementsByClassName("matriz")[6].id = "for_menu_"+(numb-2).toString();
   document.getElementsByClassName("matriz")[6].name = "for_radio_"+(numb-2).toString();
   document.getElementById("for_menu_"+(numb-2).toString()).classList.remove("matriz");
   document.getElementsByClassName("matriz")[6].setAttribute("for", "for_menu_"+(numb-2).toString());
-  document.getElementById("for_menu_"+(numb-2).toString()).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[6].classList.remove("matriz");
 
 }
         </script>
