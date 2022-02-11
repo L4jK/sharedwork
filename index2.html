@@ -895,7 +895,8 @@ function menuposition(p) {
 }
 function clone(id,divs) {
   const node = document.getElementById(id);
-  const clone = node.cloneNode("true");
+  alert(id+"-"+divs)
+  const clone = node.cloneNode(true);
   document.getElementById(divs).appendChild(clone);
 }
         </script>
