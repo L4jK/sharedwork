@@ -958,8 +958,8 @@ function removeclone(id) {
   const divsg = document.getElementById(id).parentElement;
   document.getElementById(id).remove();
   let numb = document.getElementById(divsg.id).children.length;
-  alert(numb)
-  for(let i=3;i>=(numb-1);i++){
+  
+  for(let i=3;i>numb;i++){
     alert(document.getElementById(divsg.id).children[i]);  
   const ids = document.getElementById(divsg.id).children[i].id;
   if(ids=="button_add"){
