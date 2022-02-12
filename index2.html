@@ -957,11 +957,11 @@ function clone(id,divs) {
 function removeclone(id) {
   const divsg = document.getElementById(id).parentElement;
   document.getElementById(id).remove();
-  let numb = divsg.children.length;
+  let numb = document.getElementById(divsg).children.length;
   alert(numb)
   for(let i=3;i>=(numb-1);i++){
-    alert(divsg.children[i]);  
-  const ids = divsg.children[i].id;
+    alert(document.getElementById(divsg).children[i]);  
+  const ids = document.getElementById(divsg).children[i].id;
   alert(ids);
   }
   
