@@ -955,16 +955,13 @@ function clone(id,divs) {
   document.getElementsByClassName("matriz")[7].classList.remove("matriz");
 }
 function removeclone(id) {
-  const idparent = id;
-
-  const divsg = document.getElementById(idparent).parentElement;
-  //alert(divsg.id)
-  document.getElementById(idparent).remove();
+  const divsg = document.getElementById(id).parentElement;
+  document.getElementById(id).remove();
   let numb = document.getElementById(divsg.id).children.length;
   alert(numb)
   for(let i=3;i>=(numb-1);i++){
-    alert(document.getElementById(divsg).children[i]);  
-  const ids = document.getElementById(divsg).children[i].id;
+    alert(document.getElementById(divsg.id).children[i]);  
+  const ids = document.getElementById(divsg.id).children[i].id;
   if(ids=="button_add"){
     alert("button_add");
     break;
