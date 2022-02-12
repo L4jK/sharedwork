@@ -957,7 +957,11 @@ function clone(id,divs) {
 function removeclone(id) {
   const divsg = document.getElementById(id).parentElement;
   let numb = divsg.childElementCount;
-  alert(numb)
+  //alert(numb)
+  for(let i=4;i>=num-1;i++){
+  const ids = divsg.children[i]
+  alert(ids);
+  }
   document.getElementById(id).remove();
 }
         </script>
