@@ -710,7 +710,7 @@ display: block;
     <label for="for_menu_1" class="matriz">Menu</label>
   <button id="button_rem_1" class="button_rem hidden matriz" onclick="">x</button>
   </div>
-  <button class="button_add" onclick="clone('divselects_1','configdrive_child')">+</button>
+  <button id="button_add" class="button_add" onclick="clone('divselects_1','configdrive_child')">+</button>
 </div>
 
 </div>
@@ -963,6 +963,10 @@ function removeclone(id) {
   for(let i=3;i>=(numb-1);i++){
     alert(document.getElementById(divsg).children[i]);  
   const ids = document.getElementById(divsg).children[i].id;
+  if(ids=="button_add"){
+    alert("button_add");
+    break;
+  }
   alert(ids);
   }
   
