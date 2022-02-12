@@ -959,9 +959,9 @@ function removeclone(id) {
   document.getElementById(id).remove();
   let numb = divsg.childElementCount;
   //alert(numb)
-  for(let i=2;i>=(numb-1);i++){
-    alert(divsg.children[i]);  
-  const ids = divsg.children[i].id;
+  for(let i=3;i>=(numb-1);i++){
+    alert(divsg.childNodes[i]);  
+  const ids = divsg.childNodes[i].id;
   alert(ids);
   }
   
