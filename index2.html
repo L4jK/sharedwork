@@ -955,6 +955,9 @@ function clone(id,divs) {
   document.getElementsByClassName("matriz")[7].classList.remove("matriz");
 }
 function removeclone(id) {
+  const divsg = document.getElementById(id).parentElement;
+  let numb = divsg.childElementCount;
+  alert(numb)
   document.getElementById(id).remove();
 }
         </script>
