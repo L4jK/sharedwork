@@ -971,9 +971,10 @@ function removeclone(id) {
   alert(ids.slice(0,(ids.length)-1));
   const parentidold = document.getElementById(ids.slice(0,ids.length))
   parentidold.classList.add("clone");
-  alert(parentidold.children.length); 
 
-
+  for(let j=0;j<parentidold.children.length;j++){
+    parentidold.children[j].classList.add("clone");
+  }
 }
   }
   }else{
