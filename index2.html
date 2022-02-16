@@ -980,6 +980,10 @@ function removeclone(id) {
  const nameclone = document.getElementsByClassName("clone")[1].name;
  document.getElementsByClassName("clone")[1].name = nameclone.slice(0,(nameclone.length)-1)+(i+1).toString();
     }
+    if(document.getElementsByClassName("clone")[1].getAttribute("for") !== "undefined"){
+ const forclone = document.getElementsByClassName("clone")[1].getAttribute("for");
+ document.getElementsByClassName("clone")[1].setAttribute("for", forclone.slice(0,(forclone.length)-1)+(i+1).toString());
+    }
     document.getElementsByClassName("clone")[1].classList.remove("clone");
   }
   const parentidsclone = parentidold.id;
