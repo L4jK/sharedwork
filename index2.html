@@ -959,9 +959,11 @@ function removeclone(id) {
   document.getElementById(id).remove();
   let numb = document.getElementById(divsg.id).children.length;
   alert(numb); 
-  for(let i=4;i<=(numb-2);i++){
+  if(numb>4){
+    for(let i=4;i<=(numb-2);i++){
   const ids = document.getElementById(divsg.id).children[i].id;
-  alert(ids);
+  alert(ids+"-"+ids.length);
+  alert();
   alert(ids.slice(0,(ids.length)-1)+(i-2))
     
   if(ids=="button_add"){
@@ -970,7 +972,9 @@ function removeclone(id) {
   }
   alert("hhhhh");
   }
+  }else{
   
+}
 }
         </script>
 </body>
