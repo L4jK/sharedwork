@@ -958,19 +958,19 @@ function removeclone(id) {
   const divsg = document.getElementById(id).parentElement;
   document.getElementById(id).remove();
   let numb = document.getElementById(divsg.id).children.length;
-  alert(numb); 
+  
   if(numb>4){
     for(let i=4;i<numb;i++){
   const ids = document.getElementById(divsg.id).children[i].id;
+  if(ids=="button_add"){
+    alert("button_add");
+    //break;
+  }else{
+    alert(numb); 
   alert(ids+"-"+ids.length);
   alert(ids.slice(0,(ids.length)-1));
   alert(ids.slice(0,(ids.length)-1)+(i-2))
-    
-  if(ids=="button_add"){
-    alert("button_add");
-    break;
-  }
-  alert("hhhhh");
+}
   }
   }else{
   
