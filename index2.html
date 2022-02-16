@@ -966,12 +966,14 @@ function removeclone(id) {
     alert("button_add");
     //break;
   }else{
-    alert(numb); 
+  alert(numb); 
   alert(ids+"-"+ids.length);
   alert(ids.slice(0,(ids.length)-1));
-  alert(ids.slice(0,(ids.length)-1)+(i-2))
   const parentidold = document.getElementById(ids.slice(0,ids.length))
   parentidold.classList.add("clone");
+  alert(parentidold.children.length); 
+
+
 }
   }
   }else{
