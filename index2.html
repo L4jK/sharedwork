@@ -960,21 +960,19 @@ function removeclone(id) {
   let numb = document.getElementById(divsg.id).children.length;
   
   if(numb>4){
-    for(let i=0;i<numb;i++){
+    for(let i=0;i<(numb-2);i++){
   const ids = document.getElementById(divsg.id).children[i+2].id;
+
   if(ids=="button_add" || ids=="divselects_1"){
-    alert("button_add ou 1");
-    //break;
+   
   }else{
-  //alert(numb-2); 
-  //alert(ids+"-"+ids.length);
-  //alert(ids.slice(0,(ids.length)-1));
   const parentidold = document.getElementById(ids.slice(0,ids.length))
   parentidold.classList.add("clone");
 
   for(let j=0;j<parentidold.children.length;j++){
     parentidold.children[j].classList.add("clone");
-    if(parentidold.children[j].id !== "undefined"){
+    
+    if(parentidold.children[j].id !== undefined){
  const idsclone = parentidold.children[j].id;
  document.getElementsByClassName("clone")[1].id = idsclone.slice(0,(idsclone.length)-1)+(i+1).toString();
     }
@@ -992,13 +990,14 @@ function removeclone(id) {
     }
     document.getElementsByClassName("clone")[1].classList.remove("clone");
   }
+
   const parentidsclone = parentidold.id;
     document.getElementsByClassName("clone")[0].id = parentidsclone.slice(0,(parentidsclone.length)-1)+(i+1).toString();
     document.getElementsByClassName("clone")[0].classList.remove("clone");
-}
+
+      }
   }
   }else{
-  
 }
 }
         </script>
