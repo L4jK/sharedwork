@@ -960,7 +960,7 @@ function removeclone(id) {
   let numb = document.getElementById(divsg.id).children.length;
   
   if(numb>4){
-    for(let i=0;i<(numb-2);i++){
+    for(let i=0;i<numb;i++){
   const ids = document.getElementById(divsg.id).children[i+2].id;
   if(ids=="button_add" || ids=="divselects_1"){
     alert("button_add ou 1");
