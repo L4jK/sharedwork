@@ -975,18 +975,18 @@ function removeclone(id) {
   for(let j=0;j<parentidold.children.length;j++){
     parentidold.children[j].classList.add("clone");
     if(parentidold.children[j].id !== "undefined"){
-    const idsclone = parentidold.children[j].id;
-    document.getElementsByClassName("clone")[1].id = idsclone.slice(0,(idsclone.length)-1)+(i+1).toString();
+ const idsclone = parentidold.children[j].id;
+ document.getElementsByClassName("clone")[1].id = idsclone.slice(0,(idsclone.length)-1)+(i+1).toString();
     }
-    if(document.getElementsByClassName("clone")[1].name !== "undefined"){
+    if(document.getElementsByClassName("clone")[1].name !== undefined){
  const nameclone = document.getElementsByClassName("clone")[1].name;
  document.getElementsByClassName("clone")[1].name = nameclone.slice(0,(nameclone.length)-1)+(i+1).toString();
     }
-    if(document.getElementsByClassName("clone")[1].getAttribute("for") !== "undefined"){
+    if(document.getElementsByClassName("clone")[1].getAttribute("for") !== null){
  const forclone = document.getElementsByClassName("clone")[1].getAttribute("for");
  document.getElementsByClassName("clone")[1].setAttribute("for", forclone.slice(0,(forclone.length)-1)+(i+1).toString());
     }
-    if(document.getElementsByClassName("clone")[1].getAttribute("onclick") !== "undefined"){
+    if(document.getElementsByClassName("clone")[1].getAttribute("onclick") !== null){
  const onclickclone = document.getElementsByClassName("clone")[1].getAttribute("onclick");
  document.getElementsByClassName("clone")[1].setAttribute("onclick", onclickclone.slice(0,(onclickclone.length)-3)+(i+1).toString()+"')");
     }
