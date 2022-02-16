@@ -974,7 +974,13 @@ function removeclone(id) {
 
   for(let j=0;j<parentidold.children.length;j++){
     parentidold.children[j].classList.add("clone");
+    const idsclone = parentidold.children[j].id;
+    document.getElementsByClassName("clone")[1].id = idsclone.slice(0,(idsclone.length)-1)+i.toString();
+    document.getElementsByClassName("clone")[1].classList.remove("clone");
   }
+  const parentidsclone = parentidold.id;
+    document.getElementsByClassName("clone")[0].id = parentidsclone.slice(0,(parentidsclone.length)-1)+i.toString();
+    document.getElementsByClassName("clone")[0].classList.remove("clone");
 }
   }
   }else{
