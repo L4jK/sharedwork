@@ -966,16 +966,18 @@ function removeclone(id) {
     alert("button_add ou 1");
     //break;
   }else{
-  alert(numb-2); 
-  alert(ids+"-"+ids.length);
-  alert(ids.slice(0,(ids.length)-1));
+  //alert(numb-2); 
+  //alert(ids+"-"+ids.length);
+  //alert(ids.slice(0,(ids.length)-1));
   const parentidold = document.getElementById(ids.slice(0,ids.length))
   parentidold.classList.add("clone");
 
   for(let j=0;j<parentidold.children.length;j++){
     parentidold.children[j].classList.add("clone");
+    if(parentidold.children[j].id !== "undefined"){
     const idsclone = parentidold.children[j].id;
     document.getElementsByClassName("clone")[1].id = idsclone.slice(0,(idsclone.length)-1)+(i+1).toString();
+    }
     if(document.getElementsByClassName("clone")[1].name !== "undefined"){
  const nameclone = document.getElementsByClassName("clone")[1].name;
  document.getElementsByClassName("clone")[1].name = nameclone.slice(0,(nameclone.length)-1)+(i+1).toString();
@@ -983,6 +985,10 @@ function removeclone(id) {
     if(document.getElementsByClassName("clone")[1].getAttribute("for") !== "undefined"){
  const forclone = document.getElementsByClassName("clone")[1].getAttribute("for");
  document.getElementsByClassName("clone")[1].setAttribute("for", forclone.slice(0,(forclone.length)-1)+(i+1).toString());
+    }
+    if(document.getElementsByClassName("clone")[1].getAttribute("onclick") !== "undefined"){
+ const onclickclone = document.getElementsByClassName("clone")[1].getAttribute("onclick");
+ document.getElementsByClassName("clone")[1].setAttribute("onclick", onclickclone.slice(0,(onclickclone.length)-1)+(i+1).toString());
     }
     document.getElementsByClassName("clone")[1].classList.remove("clone");
   }
