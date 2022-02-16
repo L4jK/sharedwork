@@ -960,7 +960,7 @@ function removeclone(id) {
   let numb = document.getElementById(divsg.id).children.length;
   
   if(numb>4){
-    for(let i=0;i<(numb-2);i++){
+    for(let i=0;i<(numb-2);i++){   
   const ids = document.getElementById(divsg.id).children[i+2].id;
 
   if(ids=="button_add" || ids=="divselects_1"){
@@ -972,7 +972,8 @@ function removeclone(id) {
   for(let j=0;j<parentidold.children.length;j++){
     parentidold.children[j].classList.add("clone");
     
-    if(parentidold.children[j].id !== undefined){
+    if(parentidold.children[j].id !== undefined || parentidold.children[j].id == " "){
+      alert(parentidold.children[j].id)
  const idsclone = parentidold.children[j].id;
  document.getElementsByClassName("clone")[1].id = idsclone.slice(0,(idsclone.length)-1)+(i+1).toString();
     }
