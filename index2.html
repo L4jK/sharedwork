@@ -988,7 +988,7 @@ function removeclone(id) {
     }
     if(document.getElementsByClassName("clone")[1].getAttribute("onclick") !== "undefined"){
  const onclickclone = document.getElementsByClassName("clone")[1].getAttribute("onclick");
- document.getElementsByClassName("clone")[1].setAttribute("onclick", onclickclone.slice(0,(onclickclone.length)-1)+(i+1).toString());
+ document.getElementsByClassName("clone")[1].setAttribute("onclick", onclickclone.slice(0,(onclickclone.length)-3)+(i+1).toString()+"')");
     }
     document.getElementsByClassName("clone")[1].classList.remove("clone");
   }
