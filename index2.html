@@ -978,7 +978,6 @@ function removeclone(id) {
     parentidold.children[j].classList.add("clone");
     
     if(parentidold.children[j].id !== undefined){
-      alert(parentidold.children[j].id)
  const idsclone = parentidold.children[j].id;
  document.getElementsByClassName("clone")[1].id = idsclone.slice(0,(idsclone.length)-1)+(i+1).toString();
     }
