@@ -928,7 +928,7 @@ function clone(id,divs) {
   const divsg = document.getElementById(divs);
   let numb = divsg.childElementCount;
   const clone = node.cloneNode(true);
-  divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb-1]);
+  divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb]);
   
   
   document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb-2).toString();
@@ -968,7 +968,7 @@ function removeclone(id) {
     for(let i=0;i<(numb-2);i++){   
   const ids = document.getElementById(divsg.id).children[i+2].id;
 
-  if(ids=="button_add" || ids=="divselects_1"){
+  if(ids=="button_add_1" || ids=="divselects_1"){
    
   }else{
   const parentidold = document.getElementById(ids.slice(0,ids.length))
