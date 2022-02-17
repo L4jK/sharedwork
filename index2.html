@@ -931,26 +931,26 @@ function clone(id,divs) {
   divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb]);
   
   
-  document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb-1).toString();
-  document.getElementById("divselects_"+(numb-1).toString()).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb).toString();
+  document.getElementById("divselects_"+(numb).toString()).classList.remove("matriz");
 
-  document.getElementsByClassName("matriz")[8].id = "divselect_"+(numb-1).toString();
-  document.getElementById("divselect_"+(numb-1).toString()).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[8].id = "divselect_"+(numb).toString();
+  document.getElementById("divselect_"+(numb).toString()).classList.remove("matriz");
 
-  document.getElementsByClassName("matriz")[8].id = "for_parent_"+(numb-1).toString();
-  document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb-1).toString();
-  document.getElementById("for_parent_"+(numb-1).toString()).classList.remove("matriz");
-  document.getElementsByClassName("matriz")[8].setAttribute("for", "for_parent_"+(numb-1).toString());
+  document.getElementsByClassName("matriz")[8].id = "for_parent_"+(numb).toString();
+  document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb).toString();
+  document.getElementById("for_parent_"+(numb).toString()).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[8].setAttribute("for", "for_parent_"+(numb).toString());
   document.getElementsByClassName("matriz")[8].classList.remove("matriz");
 
-  document.getElementsByClassName("matriz")[8].id = "for_menu_"+(numb-1).toString();
-  document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb-1).toString();
-  document.getElementById("for_menu_"+(numb-1).toString()).classList.remove("matriz");
-  document.getElementsByClassName("matriz")[8].setAttribute("for", "for_menu_"+(numb-1).toString());
+  document.getElementsByClassName("matriz")[8].id = "for_menu_"+(numb).toString();
+  document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb).toString();
+  document.getElementById("for_menu_"+(numb).toString()).classList.remove("matriz");
+  document.getElementsByClassName("matriz")[8].setAttribute("for", "for_menu_"+(numb).toString());
   document.getElementsByClassName("matriz")[8].classList.remove("matriz");
 
-  document.getElementsByClassName("matriz")[8].setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
-  document.getElementsByClassName("matriz")[8].id = "button_rem_"+(numb-1).toString(); 
+  document.getElementsByClassName("matriz")[8].setAttribute("onclick", "removeclone('divselects_"+(numb).toString()+"')");
+  document.getElementsByClassName("matriz")[8].id = "button_rem_"+(numb).toString(); 
   document.getElementsByClassName("matriz")[8].classList.remove("hidden");
   document.getElementsByClassName("matriz")[8].classList.add("show");
   document.getElementsByClassName("matriz")[8].classList.remove("matriz");
