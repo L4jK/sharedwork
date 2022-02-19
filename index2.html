@@ -939,12 +939,42 @@ function clone(id,divs) {
   const newdiv2 = document.createElement("div");
   newdiv2.id = "divselect_"+(numb-1).toString();
   newdiv2.classList.add("custom-select");
-  newdiv2.appendChild(clone)
+  
   const newbut1 = document.createElement("button");
   newbut1.id = "button_rem_"+(numb-1).toString();
   newbut1.classList.add("button_rem");
   newbut1.innerText = "x";
-  newdiv1.appendChild(newbut1)
+  newbut1.setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
+  newdiv1.appendChild(newbut1);
+
+  const newimp1 = document.createElement("input");
+  newimp1.type="radio";
+  newimp1.id="for_parent_"+(numb-1).toString();
+  newimp1.name="for_radio_"+(numb-1).toString();
+  newimp1.value="parent"
+  newdiv1.appendChild(newimp1);
+
+  const newlab1 = document.createElement("label");
+  newlab1.setAttribute("for", "for_parent_"+(numb-1).toString());
+  newlab1.innerText = "Parent";
+  newdiv1.appendChild(newlab1);
+
+  const newbr1 = document.createElement("br");
+  newdiv1.appendChild(newbr1);
+
+  const newimp2 = document.createElement("input");
+  newimp2.type="radio";
+  newimp2.id="for_menu_"+(numb-1).toString();
+  newimp2.name="for_radio_"+(numb-1).toString();
+  newimp2.value="menu"
+  newdiv1.appendChild(newimp2);
+
+  const newlab2 = document.createElement("label");
+  newlab2.setAttribute("for", "for_menu_"+(numb-1).toString());
+  newlab2.innerText = "Menu";
+  newdiv1.appendChild(newlab2);
+  
+  newdiv2.appendChild(clone)
   newdiv1.appendChild(newdiv2)
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
   funInitselect();
@@ -954,7 +984,7 @@ function clone(id,divs) {
   //document.getElementsByClassName("matriz")[8].id = "for_parent_"+(numb-1).toString();
   //document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb-1).toString();
   //document.getElementById("for_parent_"+(numb-1).toString()).classList.remove("matriz");
-  //document.getElementsByClassName("matriz")[8].setAttribute("for", "for_parent_"+(numb-1).toString());
+  //document.getElementsByClassName("matriz")[8]
   //document.getElementsByClassName("matriz")[8].classList.remove("matriz");
 
   //document.getElementsByClassName("matriz")[8].id = "for_menu_"+(numb-1).toString();
