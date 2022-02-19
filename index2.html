@@ -942,19 +942,19 @@ function menuposition(p) {
 function clone(id,divs) {
   const node = document.getElementById(id).getElementsByTagName("select")[0];
   const divsg = document.getElementById(divs);
-  let numb = divsg.children.length;;
+  let numb = divsg.children.length;
   const clone = node.cloneNode(true);
-  clone.classList.add("custom-select");
-  divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb]);
-  funInit();
+  const newdiv1 = document.createElement("div");
+  newdiv1.id = "divselects_"+(numb-1).toString();
+  const newdiv2 = document.createElement("div");
+  new2.id = "divselect_"+(numb-1).toString();
+  newdiv2.classList.add("custom-select");
+  newdiv2.appendChild(clone)
+  newdiv1.appendChild(newdiv2)
+  divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
+  
   alert(numb)
   
-  document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb-1).toString();
-  document.getElementById("divselects_"+(numb-1).toString()).classList.remove("div_inline_block");
-  document.getElementById("divselects_"+(numb-1).toString()).classList.remove("matriz");
-
-  document.getElementsByClassName("matriz")[8].id = "divselect_"+(numb-1).toString();
-  document.getElementById("divselect_"+(numb-1).toString()).classList.remove("matriz");
 
   document.getElementsByClassName("matriz")[8].id = "for_parent_"+(numb-1).toString();
   document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb-1).toString();
