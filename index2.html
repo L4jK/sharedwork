@@ -699,16 +699,16 @@ display: block;
   <h3>config drive</h3>
   
   <p>configure pastas e compartilhamentos.</p>
-  <div id="divselects_1" class="matriz divselects_class div_inline_block">
-  <div id="divselect_1" class="matriz custom-select">
+  <div id="divselects_1" class="divselects_class div_inline_block">
+  <div id="divselect_1" class="custom-select">
   
   </div>
-  <input type="radio" id="for_parent_1" class="matriz" name="for_radio_1" value="parent">
-    <label for="for_parent_1" class="matriz">Parent</label>
+  <input type="radio" id="for_parent_1" name="for_radio_1" value="parent">
+    <label for="for_parent_1" >Parent</label>
   <br>
-    <input type="radio" id="for_menu_1" class="matriz" name="for_radio_1" value="menu">
-    <label for="for_menu_1" class="matriz">Menu</label>
-  <button id="button_add_1" class="button_add show matriz" onclick="clone('divselects_1','configdrive_child')">+</button>
+    <input type="radio" id="for_menu_1" name="for_radio_1" value="menu">
+    <label for="for_menu_1" >Menu</label>
+  <button id="button_add_1" class="button_add show" onclick="clone('divselects_1','configdrive_child')">+</button>
 </div>
 
 </div>
@@ -932,7 +932,7 @@ function clone(id,divs) {
   const node = document.getElementById(id).getElementsByTagName("select")[0];
   const divsg = document.getElementById(divs);
   let numb = divsg.children.length;
-  const clone = node.cloneNode(true);//<button id="button_rem_1" class="button_rem hidden matriz" onclick="">x</button>
+  const clone = node.cloneNode(true);
   const newdiv1 = document.createElement("div");
   newdiv1.id = "divselects_"+(numb-1).toString();
   newdiv1.classList.add("divselects_class");
@@ -981,30 +981,7 @@ function clone(id,divs) {
   
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
   funInitselect();
-  //alert(numb)
-  
-
-  //document.getElementsByClassName("matriz")[8].id = "for_parent_"+(numb-1).toString();
-  //document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb-1).toString();
-  //document.getElementById("for_parent_"+(numb-1).toString()).classList.remove("matriz");
-  //document.getElementsByClassName("matriz")[8]
-  //document.getElementsByClassName("matriz")[8].classList.remove("matriz");
-
-  //document.getElementsByClassName("matriz")[8].id = "for_menu_"+(numb-1).toString();
-  //document.getElementsByClassName("matriz")[8].name = "for_radio_"+(numb-1).toString();
-  //document.getElementById("for_menu_"+(numb-1).toString()).classList.remove("matriz");
-  //document.getElementsByClassName("matriz")[8].setAttribute("for", "for_menu_"+(numb-1).toString());
-  //document.getElementsByClassName("matriz")[8].classList.remove("matriz");
-
-  //document.getElementsByClassName("matriz")[8].setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
-  //document.getElementsByClassName("matriz")[8].id = "button_rem_"+(numb-1).toString(); 
-  //document.getElementsByClassName("matriz")[8].classList.remove("hidden");
-  //document.getElementsByClassName("matriz")[8].classList.add("show");
-  //document.getElementsByClassName("matriz")[8].classList.remove("matriz");
-
-  //document.getElementsByClassName("matriz")[8].classList.remove("show");
-  //document.getElementsByClassName("matriz")[8].classList.add("hidden");
-  //document.getElementsByClassName("matriz")[8].classList.remove("matriz");
+ 
 }
 function removeclone(id) {
   const divsg = document.getElementById(id).parentElement;
