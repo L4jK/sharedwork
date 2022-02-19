@@ -840,7 +840,7 @@ var span = document.getElementById("headerselected");
         x = document.getElementsByClassName("custom-select");
         l = x.length;
         for (i = 0; i < l; i++) {
-          selElmnt = x[i].getElementsByTagName("select")[0];
+          selElmnt = x[0].getElementsByTagName("select")[0];
           ll = selElmnt.length;
           /*for each element, create a new DIV that will act as the selected item:*/
           a = document.createElement("DIV");
@@ -914,8 +914,8 @@ var span = document.getElementById("headerselected");
         /*if the user clicks anywhere outside the select box,
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
-        x[i].classList.add("custom-select_recreate");
-            x[i].classList.remove("custom-select");
+        x[0].classList.add("custom-select_recreate");
+            x[0].classList.remove("custom-select");
       }
 
 
