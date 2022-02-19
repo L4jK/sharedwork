@@ -964,7 +964,7 @@ function removeclone(id) {
   document.getElementById(id).remove();
   let numb = document.getElementById(divsg.id).children.length;
   alert(numb)
-  if(numb>4){
+  if(numb>=4){
     for(let i=0;i<(numb-2);i++){   
   const ids = document.getElementById(divsg.id).children[i+2].id;
 
