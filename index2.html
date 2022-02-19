@@ -926,10 +926,10 @@ function menuposition(p) {
 function clone(id,divs) {
   const node = document.getElementById(id);
   const divsg = document.getElementById(divs);
-  let numb = divsg.childElementCount;
+  let numb = divsg.children.length;;
   const clone = node.cloneNode(true);
   divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb]);
-  
+  alert(numb)
   
   document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb).toString();
   document.getElementById("divselects_"+(numb).toString()).classList.remove("matriz");
