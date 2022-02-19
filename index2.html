@@ -857,10 +857,10 @@ var span = document.getElementById("headerselected");
                 sl = s.length;
                 h = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
+                  alert(this.parentElement.parentElement.id+"-"+i+"-"+s.options[i].value)
                   if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
-                    alert(this.parentElement.parentElement.id+"-"+i)
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     yl = y.length;
                     for (k = 0; k < yl; k++) {
