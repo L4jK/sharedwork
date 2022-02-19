@@ -888,8 +888,7 @@ var span = document.getElementById("headerselected");
               this.nextSibling.classList.toggle("select-hide");
               this.classList.toggle("select-arrow-active");
             });
-            x[i].classList.add("custom-select_recreate");
-            x[i].classList.remove("custom-select");
+            
         }
         function closeAllSelect(elmnt) {
           /*a function that will close all select boxes in the document,
@@ -915,6 +914,8 @@ var span = document.getElementById("headerselected");
         /*if the user clicks anywhere outside the select box,
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
+        x[i].classList.add("custom-select_recreate");
+            x[i].classList.remove("custom-select");
       }
 
 
