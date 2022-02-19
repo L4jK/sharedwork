@@ -968,6 +968,9 @@ function clone(id,divs) {
   newlab2.setAttribute("for", "for_menu_"+(numb-1).toString());
   newlab2.innerText = "Menu";
   newdiv1.appendChild(newlab2);
+
+  const newbr2 = document.createElement("br");
+  newdiv2.appendChild(newbr1);
     
   const newbut1 = document.createElement("button");
   newbut1.id = "button_rem_"+(numb-1).toString();
