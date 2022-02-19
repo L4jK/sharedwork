@@ -832,6 +832,9 @@ var span = document.getElementById("headerselected");
         function funInit() {
           // Get the element with id="defaultOpen" and click on it
           document.getElementById("modaltabdefaultOpen").click();
+          funInitselect();
+        }
+        function funInitselect() {  
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
         x = document.getElementsByClassName("custom-select");
@@ -946,7 +949,7 @@ function clone(id,divs) {
   const clone = node.cloneNode(true);
   clone.classList.add("custom-select");
   divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb]);
-  funInit();
+  funInitselect();
   alert(numb)
   
   document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb-1).toString();
