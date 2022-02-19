@@ -939,13 +939,8 @@ function clone(id,divs) {
   const newdiv2 = document.createElement("div");
   newdiv2.id = "divselect_"+(numb-1).toString();
   newdiv2.classList.add("custom-select");
-  
-  const newbut1 = document.createElement("button");
-  newbut1.id = "button_rem_"+(numb-1).toString();
-  newbut1.classList.add("button_rem");
-  newbut1.innerText = "x";
-  newbut1.setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
-  newdiv1.appendChild(newbut1);
+  newdiv2.appendChild(clone)
+  newdiv1.appendChild(newdiv2)
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
@@ -973,9 +968,14 @@ function clone(id,divs) {
   newlab2.setAttribute("for", "for_menu_"+(numb-1).toString());
   newlab2.innerText = "Menu";
   newdiv1.appendChild(newlab2);
+    
+  const newbut1 = document.createElement("button");
+  newbut1.id = "button_rem_"+(numb-1).toString();
+  newbut1.classList.add("button_rem");
+  newbut1.innerText = "x";
+  newbut1.setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
+  newdiv1.appendChild(newbut1);
   
-  newdiv2.appendChild(clone)
-  newdiv1.appendChild(newdiv2)
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
   funInitselect();
   //alert(numb)
