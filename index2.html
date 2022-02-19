@@ -940,7 +940,7 @@ function menuposition(p) {
   }
 }
 function clone(id,divs) {
-  const node = document.getElementById(id);
+  const node = document.getElementById(id).getElementsByTagName("select")[0];
   const divsg = document.getElementById(divs);
   let numb = divsg.children.length;;
   const clone = node.cloneNode(true);
