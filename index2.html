@@ -815,6 +815,16 @@ var span = document.getElementById("headerselected");
         function funInit() {
           // Get the element with id="defaultOpen" and click on it
           document.getElementById("modaltabdefaultOpen").click();
+          if(document.getElementsByClassName("custom-select_recreate")!==undefined){
+          const classrecrate = document.getElementsByClassName("custom-select_recreate");
+          let numclass = classrecrate.length;
+          const matriz = document.getElementsByClassName("custom-select")[0];
+          matriz.classList.add("custom-select");
+          matriz.classList.remove("custom-select_recreate");
+          for(let m = 1;m<numclass;m++){
+            document.getElementById("divselects_"+m.toString()).remove();
+          }
+          }
           funInitselect();
         }
         function funInitselect() {  
