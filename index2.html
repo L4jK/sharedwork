@@ -859,6 +859,13 @@ var span = document.getElementById("headerselected");
                 for (i = 0; i < sl; i++) {
                   if (s.options[i].innerHTML == this.innerHTML) {
                     alert(this.parentElement.parentElement.parentElement.id+"-"+s.options[i].text+"-"+s.options[i].value)
+                    const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
+                    const testecheck = idparentselect.getElementsByTagName("input");
+                        if(testecheck[0].checked == true){ 
+                      alert(testecheck[0].value);
+                       }else{
+                        alert(testecheck[1].value);
+                         }
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
                     y = this.parentNode.getElementsByClassName("same-as-selected");
