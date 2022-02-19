@@ -832,6 +832,9 @@ var span = document.getElementById("headerselected");
         function funInit() {
           // Get the element with id="defaultOpen" and click on it
           document.getElementById("modaltabdefaultOpen").click();
+          funInitselect();
+        }
+        function funInitselect() {  
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
         x = document.getElementsByClassName("custom-select");
@@ -885,6 +888,8 @@ var span = document.getElementById("headerselected");
               this.nextSibling.classList.toggle("select-hide");
               this.classList.toggle("select-arrow-active");
             });
+            x.classList.add("custom-select_recreate");
+            x.classList.remove("custom-select");
         }
         function closeAllSelect(elmnt) {
           /*a function that will close all select boxes in the document,
