@@ -706,7 +706,7 @@ display: block;
   <input type="radio" id="for_parent_1" name="for_radio_1" value="parent">
     <label for="for_parent_1" >Parent</label>
   <br>
-    <input type="radio" id="for_menu_1" name="for_radio_1" value="menu">
+    <input type="radio" id="for_menu_1" name="for_radio_1" value="menu" checked>
     <label for="for_menu_1" >Menu</label>
   <button id="button_add_1" class="button_add show" onclick="clone('divselects_1','configdrive_child')">+</button>
 </div>
@@ -980,7 +980,8 @@ function clone(id,divs) {
   newimp2.type="radio";
   newimp2.id="for_menu_"+(numb-1).toString();
   newimp2.name="for_radio_"+(numb-1).toString();
-  newimp2.value="menu"
+  newimp2.value="menu";
+  newimp2.checked = true;
   newdiv1.appendChild(newimp2);
 
   const newlab2 = document.createElement("label");
