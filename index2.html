@@ -946,6 +946,7 @@ function clone(id,divs) {
   const clone = node.cloneNode(true);
   clone.classList.add("custom-select");
   divsg.insertBefore(divsg.appendChild(clone),divsg.children[numb]);
+  funInit();
   alert(numb)
   
   document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb-1).toString();
