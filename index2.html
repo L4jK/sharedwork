@@ -815,6 +815,7 @@ var span = document.getElementById("headerselected");
         function funInit() {
           // Get the element with id="defaultOpen" and click on it
           document.getElementById("modaltabdefaultOpen").click();
+          alert(document.getElementsByClassName("custom-select_recreate")[0])
           if(document.getElementsByClassName("custom-select_recreate")[0]!==undefined){
           const classrecrate = document.getElementsByClassName("custom-select_recreate");
           let numclass = classrecrate.length;
