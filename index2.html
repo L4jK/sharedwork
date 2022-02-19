@@ -942,7 +942,7 @@ function clone(id,divs) {
   newdiv2.appendChild(clone)
   const newbut1 = document.createElement("button");
   newbut1.id = "button_rem_"+(numb-1).toString();
-  newbut1.classList.add("button_rem hidden");
+  newbut1.classList.add("button_rem");
   newbut1.innerText = "x";
   newdiv1.appendChild(newdiv2)
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
