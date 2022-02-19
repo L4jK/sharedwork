@@ -888,8 +888,8 @@ var span = document.getElementById("headerselected");
               this.nextSibling.classList.toggle("select-hide");
               this.classList.toggle("select-arrow-active");
             });
-            x.classList.add("custom-select_recreate");
-            x.classList.remove("custom-select");
+            x[i].classList.add("custom-select_recreate");
+            x[i].classList.remove("custom-select");
         }
         function closeAllSelect(elmnt) {
           /*a function that will close all select boxes in the document,
