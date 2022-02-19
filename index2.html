@@ -858,7 +858,7 @@ var span = document.getElementById("headerselected");
                 h = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
                   if (s.options[i].innerHTML == this.innerHTML) {
-                    alert(this.parentElement.parentElement.parentElement.id+"-"+i+"-"+s.options[i].value)
+                    alert(this.parentElement.parentElement.parentElement.id+"-"+s.options[i].text+"-"+s.options[i].value)
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
                     y = this.parentNode.getElementsByClassName("same-as-selected");
