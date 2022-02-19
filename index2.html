@@ -948,6 +948,7 @@ function clone(id,divs) {
   alert(numb)
   
   document.getElementsByClassName("matriz")[8].id = "divselects_"+(numb-1).toString();
+  document.getElementById("divselects_"+(numb-1).toString()).classList.remove("div_inline_block");
   document.getElementById("divselects_"+(numb-1).toString()).classList.remove("matriz");
 
   document.getElementsByClassName("matriz")[8].id = "divselect_"+(numb-1).toString();
