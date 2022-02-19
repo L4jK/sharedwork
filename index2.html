@@ -711,23 +711,7 @@ display: block;
   <button id="button_rem_1" class="button_rem hidden matriz" onclick="">x</button>
   <button id="button_add_1" class="button_add show matriz" onclick="clone('divselects_1','configdrive_child')">+</button>
 </div>
-<div class="custom-select div_inline_block" style="width:200px;">
-  <select>
-    <option value="0">Select car:</option>
-    <option value="1">Audi</option>
-    <option value="2">BMW</option>
-    <option value="3">Citroen</option>
-    <option value="4">Ford</option>
-    <option value="5">Honda</option>
-    <option value="6">Jaguar</option>
-    <option value="7">Land Rover</option>
-    <option value="8">Mercedes</option>
-    <option value="9">Mini</option>
-    <option value="10">Nissan</option>
-    <option value="11">Toyota</option>
-    <option value="12">Volvo</option>
-  </select>
-</div>
+
 </div>
 
 </div>
@@ -960,7 +944,7 @@ function clone(id,divs) {
   newdiv1.appendChild(newdiv2)
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
   funInitselect();
-  alert(numb)
+  //alert(numb)
   
 
   //document.getElementsByClassName("matriz")[8].id = "for_parent_"+(numb-1).toString();
