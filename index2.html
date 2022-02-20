@@ -775,7 +775,7 @@ var span = document.getElementById("headerselected");
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
                   .autofunction(
-            '{"funct":"function(){var folders = DriveApp.searchFolders(\'sharedWithMe = true\');var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}var q = []; q.push(JSON.stringify(foldersm)); q.push(\"divselect_1\"); return q;}"}'
+            '{"funct":"function(){var folders = DriveApp.searchFolders(\'sharedWithMe = true\');var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\"divselect_1\"); return q;}"}'
                   )
 }
 
@@ -790,7 +790,7 @@ var span = document.getElementById("headerselected");
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}var q = []; q.push(JSON.stringify(foldersm)); q.push(\"divselect_1\"); return q;}"}'
+                    '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\"divselect_1\"); return q;}"}'
                   )
 }
         
