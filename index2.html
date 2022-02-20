@@ -633,6 +633,8 @@ display: block;
           } else {
             y.style.display = "block";
           }
+           // Get the element with id="defaultOpen" and click on it
+           document.getElementById("modaltabdefaultOpen").click();
         }
         </script>
         <script>
@@ -810,8 +812,7 @@ const divreturn = "divselect_1";
       
         
         function funInit() {
-          // Get the element with id="defaultOpen" and click on it
-          document.getElementById("modaltabdefaultOpen").click();
+         
         
           if(document.getElementsByClassName("custom-select_recreate")[0]!==undefined){
           const classrecrate = document.getElementsByClassName("custom-select_recreate");
