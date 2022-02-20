@@ -742,16 +742,7 @@ display: block;
       <h1>Shared work mode: <span id="headerselected"></span></h1>
       </header>  
       <div id="nav_menu"class="menu menuh">
-        <a class="activeitemmenu" href="#">oi</a>
-        <a href="#">Avast_Antivirus_Premier_8</a> 
-        <a href="#">oi</a> 
-        <a href="#">oi</a>
-        <a href="#">oi</a> 
-         <a href="#">Avast_Antivirus_Premier_8</a> 
-        <a href="#">oi</a> 
-        <a href="#">oi</a>
-        <a href="#">oi</a> 
-        <a href="#">Avast_Antivirus_Premier_8</a> 
+        
       </div>
 
       <div id="main_content" class="main_content_classh">oi</div>
@@ -864,7 +855,7 @@ var span = document.getElementById("headerselected");
                         if(testecheck[0].checked == true){ 
                       alert(testecheck[0].value);
                        }else{
-                        alert(testecheck[1].value);
+                        genmenu(s.options[i].text,s.options[i].value)
                          }
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
@@ -1048,6 +1039,23 @@ function removeclone(id) {
   }
   }else{
 }
+}
+function genmenu(name,gid) {
+  const menu = document.getElementById("nav_menu")
+  const newnav1 = document.createElement("a");
+  newnav1.id = "button_nav_"+name;
+  newnav1.innerText = name;
+  newnav1.setAttribute("onclick", "openinmain(this,'"+gid+"')");
+  menu.appendChild(newnav1);
+}
+
+function openinmain(div,gid) {
+  const classmenu = document.getElementsByClassName("activeitemmenu")
+  for (let i = 0; i < classmenu.length; i++) {
+    classmenu[i].classList.remove("activeitemmenu");
+  }
+  div.classList.add("activeitemmenu");
+
 }
         </script>
 </body>
