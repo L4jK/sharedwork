@@ -494,7 +494,7 @@
 .main_content_classh{
   margin-left: 0px;
   margin-top: 10px;
-  height:70.4vh;
+  height:70.3vh;
   border: 1px solid #dbdce0; 
   border-radius: 8px 8px 0 0;
 }
@@ -796,7 +796,7 @@ var span = document.getElementById("headerselected");
         
       function driveselectfolder(folders) {   
                     
-        let jText = '{"jsonResponse":'+folders+'}';
+        let jText = '{"jsonResponse":'+folders[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
         let selectcreat = "<select>";
@@ -804,7 +804,7 @@ var span = document.getElementById("headerselected");
           selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
         }
         selectcreat += "</select>";
-        document.getElementById("divselect_1").innerHTML = selectcreat;
+        document.getElementById(folders[1]).innerHTML = selectcreat;
         funInit();
       }
       
