@@ -449,7 +449,6 @@
   background-color: #555;
   overflow: auto;
   white-space: nowrap;
-  cursor: pointer;
 }
 .menuh {
   margin-left: 150px;
@@ -494,6 +493,7 @@
     opacity: 0;
     transition: all 0.8s;
 }
+
 .activeitemmenu {
   background-color: #04AA6D;
 }
@@ -1062,7 +1062,10 @@ function genmenu(name,gid) {
 }
 
 function openinmain(div,gid) {
-  document.getElementsByClassName("activeitemmenu")[0].classList.remove("activeitemmenu");
+  const classmenu = document.getElementsByClassName("activeitemmenu")
+  for (let i = 0; i < classmenu.length; i++) {
+    classmenu[i].classList.remove("activeitemmenu");
+  }
   div.classList.add("activeitemmenu");
 
 }
