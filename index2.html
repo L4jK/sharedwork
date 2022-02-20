@@ -1050,10 +1050,7 @@ function genmenu(name,gid) {
 }
 
 function openinmain(div,gid) {
-  const classmenu = document.getElementsByClassName("activeitemmenu")
-  for (let i = 0; i < classmenu.length; i++) {
-    classmenu[i].classList.remove("activeitemmenu");
-  }
+  document.getElementsByClassName("activeitemmenu")[0].classList.remove("activeitemmenu");
   div.classList.add("activeitemmenu");
 
 }
