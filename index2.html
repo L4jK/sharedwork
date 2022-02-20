@@ -770,12 +770,12 @@ var span = document.getElementById("headerselected");
   span.style.color =  "#4CAF50";
   span.innerText = "shared with me";
   modal.style.display = "none";
-
+  const divreturn = "divselect_1";
   google.script.run
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
                   .autofunction(
-            '{"funct":"function(){var folders = DriveApp.searchFolders(\'sharedWithMe = true\');var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\"divselect_1\"); return q;}"}'
+            '{"funct":"function(){var folders = DriveApp.searchFolders(\'sharedWithMe = true\');var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push('+divreturn+'); return q;}"}'
                   )
 }
 
@@ -785,12 +785,12 @@ var span = document.getElementById("headerselected");
   span.style.color = "#f4511e";
   span.innerText = "i share";
   modal.style.display = "none";
-
+const divreturn = "divselect_1";
   google.script.run
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\"divselect_1\"); return q;}"}'
+                    '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push('+divreturn+'); return q;}"}'
                   )
 }
         
