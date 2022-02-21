@@ -817,6 +817,7 @@ const g_id = gid;
           selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
         }
         selectcreat += "</select>";
+        alert(document.getElementById(folders[1])
         if(document.getElementById(folders[1])!==undefined){
         document.getElementById(folders[1]).innerHTML = selectcreat;
         }else{
@@ -824,7 +825,7 @@ const g_id = gid;
           const newdiv1 = document.createElement("div");
            newdiv1.id = folders[1];
            //newdiv1.classList.add("divselects_class");
-           newdiv1.value = selectcreat;
+           newdiv1.innerHTML = selectcreat;
            parentdiv1.appendChild(newdiv1);
         }
         funInit();
@@ -832,7 +833,6 @@ const g_id = gid;
       
         
         function funInit() {
-         
           if(document.getElementsByClassName("custom-select_recreate")[0]!==undefined){
           const classrecrate = document.getElementsByClassName("custom-select_recreate");
           let numclass = classrecrate.length;
