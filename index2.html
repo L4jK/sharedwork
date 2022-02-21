@@ -1092,22 +1092,22 @@ function parent(id,selectcreat) {
   newdiv2.id = "divselect_"+id.slice(11,id.length);
   newdiv2.classList.add("custom-select");
   newdiv2.innerHTML = selectcreat;
-  newdiv1.appendChild(newdiv2)
+  
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
   newimp1.id="for_parent_"+id.slice(11,id.length);
   newimp1.name="for_radio_"+id.slice(11,id.length);
   newimp1.value="parent"
-  newdiv1.appendChild(newimp1);
+  newdiv2.appendChild(newimp1);
 
   const newlab1 = document.createElement("label");
   newlab1.setAttribute("for", "for_parent_"+id.slice(11,id.length));
   newlab1.innerText = "Parent";
-  newdiv1.appendChild(newlab1);
+  newdiv2.appendChild(newlab1);
 
   const newbr1 = document.createElement("br");
-  newdiv1.appendChild(newbr1);
+  newdiv2.appendChild(newbr1);
 
   const newimp2 = document.createElement("input");
   newimp2.type="radio";
@@ -1115,13 +1115,14 @@ function parent(id,selectcreat) {
   newimp2.name="for_radio_"+id.slice(11,id.length);
   newimp2.value="menu";
   newimp2.checked = true;
-  newdiv1.appendChild(newimp2);
+  newdiv2.appendChild(newimp2);
 
   const newlab2 = document.createElement("label");
   newlab2.setAttribute("for", "for_menu_"+id.slice(11,id.length));
   newlab2.innerText = "Menu";
-  newdiv1.appendChild(newlab2);
-  
+  newdiv2.appendChild(newlab2);
+
+  newdiv1.appendChild(newdiv2)
   parentdiv1.appendChild(newdiv1);
 }
         </script>
