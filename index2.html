@@ -1081,7 +1081,7 @@ function parent(id) {
   const parentdiv1 = document.getElementById(id.slice(0,12));
   const newdiv1 = document.createElement("div");
   newdiv1.id = id;
-  //newdiv1.classList.add("divselects_class");
+  newdiv1.classList.add("divselects_class");
   const newdiv2 = document.createElement("div");
   newdiv2.id = "divselect_"+id.slice(11,id.length);
   newdiv2.classList.add("custom-select");
