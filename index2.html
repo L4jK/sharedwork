@@ -871,8 +871,8 @@ const g_id = gid;
                 h = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
                   if (s.options[i].innerHTML == this.innerHTML) {
-                    alert(this.parentElement.parentElement.id+"-"+s.options[i].text+"-"+s.options[i].value)
-                    const idparentselect = document.getElementById(this.parentElement.parentElement.id);
+                    alert(this.parentElement.parentElement.parentElement.id+"-"+s.options[i].text+"-"+s.options[i].value)
+                    const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
                     const testecheck = idparentselect.getElementsByTagName("input");
                         if(testecheck[0].checked == true){ 
                       parentfolder(this.parentElement.parentElement.parentElement.id,s.options[i].value)
@@ -1086,8 +1086,8 @@ function openinmain(div,gid) {
 }
 
 function parent(id,selectcreat) {
-  alert(id.slice(0,12))
-  const parentdiv1 = document.getElementById(id.slice(0,12)).parentElement;
+  alert(id.slice(0,17))
+  const parentdiv1 = document.getElementById(id.slice(0,17));
   
   const newdiv1 = document.createElement("div");
   newdiv1.id = id;
