@@ -807,8 +807,7 @@ const g_id = gid;
                   )
 }
 
-      function driveselectfolder(folders) {   
-                    
+      function driveselectfolder(folders) {               
         let jText = '{"jsonResponse":'+folders[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
@@ -817,8 +816,7 @@ const g_id = gid;
           selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
         }
         selectcreat += "</select>";
-        alert(document.getElementById(folders[1]))
-        if(document.getElementById(folders[1])!==undefined){
+        if(document.getElementById(folders[1])!==null){
         document.getElementById(folders[1]).innerHTML = selectcreat;
         }else{
           const parentdiv1 = document.getElementById(folders[1].slice(0,12));
