@@ -819,8 +819,7 @@ const g_id = gid;
         if(document.getElementById(folders[1])!==null){
         document.getElementById(folders[1]).innerHTML = selectcreat;
         }else{
-          alert(folders[1]);
-          parent(folders[1]);
+          parent(folders[1],selectcreat);
         }
         funInit();
       }
@@ -1078,7 +1077,7 @@ function openinmain(div,gid) {
 
 }
 
-function parent(id) {
+function parent(id,selectcreat) {
   const parentdiv1 = document.getElementById(id.slice(0,12));
   const newdiv1 = document.createElement("div");
   newdiv1.id = id;
@@ -1086,6 +1085,7 @@ function parent(id) {
   const newdiv2 = document.createElement("div");
   newdiv2.id = "divselect_"+id.slice(11,id.length);
   newdiv2.classList.add("custom-select");
+  newdiv2.innerHTML = selectcreat;
   newdiv1.appendChild(newdiv2)
 
   const newimp1 = document.createElement("input");
