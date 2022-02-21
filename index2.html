@@ -976,6 +976,7 @@ function clone(id,divs) {
   newdiv3.classList.add("custom-select");
  
   newdiv3.appendChild(clone)
+  newdiv2.appendChild(newdiv3)
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
@@ -1015,7 +1016,6 @@ function clone(id,divs) {
   newbut1.setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
   newdiv2.appendChild(newbut1);
   
-  newdiv2.appendChild(newdiv3)
   newdiv1.appendChild(newdiv2)
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
   funInitselect();
