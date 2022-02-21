@@ -853,7 +853,7 @@ const g_id = gid;
           a = document.createElement("DIV");
           a.setAttribute("class", "select-selected");
           a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-          x[i].insertBefore(a,selElmnt);
+          x[i].insertBefore(x[i].appendChild(a),selElmnt);
           /*for each element, create a new DIV that will contain the option list:*/
           b = document.createElement("DIV");
           b.setAttribute("class", "select-items select-hide");
