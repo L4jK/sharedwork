@@ -1086,7 +1086,7 @@ function openinmain(div,gid) {
 }
 
 function parent(id,selectcreat) {
-  const parentdiv1 = document.getElementById(id.slice(0,12));
+  const parentdiv1 = document.getElementById(id.slice(0,12)).parentElement;
   const newdiv1 = document.createElement("div");
   newdiv1.id = id;
   newdiv1.classList.add("divselects_class");
