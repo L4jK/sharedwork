@@ -707,7 +707,7 @@ display: block;
   <h3>config drive</h3>
   
   <p>configure pastas e compartilhamentos.</p>
-  <div id="divselects_1" class="divselects_class div_inline_block">
+  <div id="divselects_1" class="divselects_class">
   <div id="divselect_1" class="custom-select">
   
   </div>
@@ -969,6 +969,7 @@ function clone(id,divs) {
   const newdiv2 = document.createElement("div");
   newdiv2.id = "divselect_"+(numb-1).toString();
   newdiv2.classList.add("custom-select");
+  newdiv1.classList.add("div_inline_block");
   newdiv2.appendChild(clone)
   newdiv1.appendChild(newdiv2)
 
@@ -1079,7 +1080,7 @@ function openinmain(div,gid) {
 }
 
 function parent(id,selectcreat) {
-  const parentdiv1 = document.getElementById(id.slice(0,12)).parentElement;
+  const parentdiv1 = document.getElementById(id.slice(0,12));
   const newdiv1 = document.createElement("div");
   newdiv1.id = id;
   newdiv1.classList.add("divselects_class");
