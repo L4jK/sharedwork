@@ -708,9 +708,10 @@ display: block;
   
   <p>configure pastas e compartilhamentos.</p>
   <div id="divselects_1" class="divselects_class">
+    <div id="divselectschild_1" class="div_inline_block">
   <div id="divselect_1" class="custom-select">
 
-
+   
   </div>
   <input type="radio" id="for_parent_1" name="for_radio_1" value="parent">
     <label for="for_parent_1" >Parent</label>
@@ -719,9 +720,8 @@ display: block;
     <label for="for_menu_1" >Menu</label>
   <button id="button_add_1" class="button_add show" onclick="clone('divselects_1','configdrive_child')">+</button>
 </div>
-
 </div>
-
+</div>
 </div>
 
 <div id="styleconfig" class="tabmodalcontent">
@@ -853,7 +853,7 @@ const g_id = gid;
           a = document.createElement("DIV");
           a.setAttribute("class", "select-selected");
           a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-          x[i].insertBefore(a,x[0].children[0]);
+          x[i].appendChild(a);
           /*for each element, create a new DIV that will contain the option list:*/
           b = document.createElement("DIV");
           b.setAttribute("class", "select-items select-hide");
@@ -930,7 +930,6 @@ const g_id = gid;
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
         x[0].classList.add("custom-select_recreate");
-        x[0].classList.add("div_inline_block");
             x[0].classList.remove("custom-select");
       }
 
@@ -970,25 +969,29 @@ function clone(id,divs) {
   newdiv1.id = "divselects_"+(numb-1).toString();
   newdiv1.classList.add("divselects_class");
   const newdiv2 = document.createElement("div");
-  newdiv2.id = "divselect_"+(numb-1).toString();
-  newdiv2.classList.add("custom-select");
+  newdiv2.id = "divselectschild_"+(numb-1).toString();
+  newdiv2.classList.add("divselects_class");
   newdiv2.classList.add("div_inline_block");
-  newdiv2.appendChild(clone)
+  const newdiv3 = document.createElement("div");
+  newdiv3.id = "divselect_"+(numb-1).toString();
+  newdiv3.classList.add("custom-select");
+ 
+  newdiv3.appendChild(clone)
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
   newimp1.id="for_parent_"+(numb-1).toString();
   newimp1.name="for_radio_"+(numb-1).toString();
   newimp1.value="parent"
-  newdiv2.appendChild(newimp1);
+  newdiv3.appendChild(newimp1);
 
   const newlab1 = document.createElement("label");
   newlab1.setAttribute("for", "for_parent_"+(numb-1).toString());
   newlab1.innerText = "Parent";
-  newdiv2.appendChild(newlab1);
+  newdiv3.appendChild(newlab1);
 
   const newbr1 = document.createElement("br");
-  newdiv2.appendChild(newbr1);
+  newdiv3.appendChild(newbr1);
 
   const newimp2 = document.createElement("input");
   newimp2.type="radio";
@@ -996,23 +999,24 @@ function clone(id,divs) {
   newimp2.name="for_radio_"+(numb-1).toString();
   newimp2.value="menu";
   newimp2.checked = true;
-  newdiv2.appendChild(newimp2);
+  newdiv3.appendChild(newimp2);
 
   const newlab2 = document.createElement("label");
   newlab2.setAttribute("for", "for_menu_"+(numb-1).toString());
   newlab2.innerText = "Menu";
-  newdiv2.appendChild(newlab2);
+  newdiv3.appendChild(newlab2);
 
   const newbr2 = document.createElement("br");
-  newdiv2.appendChild(newbr2);
+  newdiv3.appendChild(newbr2);
     
   const newbut1 = document.createElement("button");
   newbut1.id = "button_rem_"+(numb-1).toString();
   newbut1.classList.add("button_rem");
   newbut1.innerText = "x";
   newbut1.setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
-  newdiv2.appendChild(newbut1);
+  newdiv3.appendChild(newbut1);
   
+  newdiv2.appendChild(newdiv3)
   newdiv1.appendChild(newdiv2)
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
   funInitselect();
