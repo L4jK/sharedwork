@@ -973,22 +973,21 @@ function clone(id,divs) {
   newdiv2.id = "divselect_"+(numb-1).toString();
   newdiv2.classList.add("custom-select");
   newdiv2.classList.add("div_inline_block");
-  newdiv2.appendChild(clone)
 
-  const newbut1 = document.createElement("button");
-  newbut1.id = "button_rem_"+(numb-1).toString();
-  newbut1.classList.add("button_rem");
-  newbut1.innerText = "x";
-  newbut1.setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
-  newdiv2.appendChild(newbut1);
+  const newimp1 = document.createElement("input");
+  newimp1.type="radio";
+  newimp1.id="for_parent_"+(numb-1).toString();
+  newimp1.name="for_radio_"+(numb-1).toString();
+  newimp1.value="parent"
+  newdiv2.appendChild(newimp1);
 
-  const newbr2 = document.createElement("br");
-  newdiv2.appendChild(newbr2);
+  const newlab1 = document.createElement("label");
+  newlab1.setAttribute("for", "for_parent_"+(numb-1).toString());
+  newlab1.innerText = "Parent";
+  newdiv2.appendChild(newlab1);
 
-  const newlab2 = document.createElement("label");
-  newlab2.setAttribute("for", "for_menu_"+(numb-1).toString());
-  newlab2.innerText = "Menu";
-  newdiv2.appendChild(newlab2);
+  const newbr1 = document.createElement("br");
+  newdiv2.appendChild(newbr1);
 
   const newimp2 = document.createElement("input");
   newimp2.type="radio";
@@ -998,21 +997,21 @@ function clone(id,divs) {
   newimp2.checked = true;
   newdiv2.appendChild(newimp2);
 
-  const newbr1 = document.createElement("br");
-  newdiv2.appendChild(newbr1);
+  const newlab2 = document.createElement("label");
+  newlab2.setAttribute("for", "for_menu_"+(numb-1).toString());
+  newlab2.innerText = "Menu";
+  newdiv2.appendChild(newlab2);
 
-  const newlab1 = document.createElement("label");
-  newlab1.setAttribute("for", "for_parent_"+(numb-1).toString());
-  newlab1.innerText = "Parent";
-  newdiv2.appendChild(newlab1);
+  const newbr2 = document.createElement("br");
+  newdiv2.appendChild(newbr2);
+    
+  const newbut1 = document.createElement("button");
+  newbut1.id = "button_rem_"+(numb-1).toString();
+  newbut1.classList.add("button_rem");
+  newbut1.innerText = "x";
+  newbut1.setAttribute("onclick", "removeclone('divselects_"+(numb-1).toString()+"')");
+  newdiv2.appendChild(newbut1);
   
-  const newimp1 = document.createElement("input");
-  newimp1.type="radio";
-  newimp1.id="for_parent_"+(numb-1).toString();
-  newimp1.name="for_radio_"+(numb-1).toString();
-  newimp1.value="parent"
-  newdiv2.appendChild(newimp1);
-
   newdiv1.appendChild(newdiv2)
   divsg.insertBefore(divsg.appendChild(newdiv1),divsg.children[numb]);
   funInitselect();
