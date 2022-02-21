@@ -1092,12 +1092,16 @@ function parent(id,selectcreat) {
   const newdiv1 = document.createElement("div");
   newdiv1.id = id;
   newdiv1.classList.add("divselects_class");
-  newdiv1.classList.add("div_inline_block");
+
   const newdiv2 = document.createElement("div");
-  newdiv2.id = "divselect_"+id.slice(16,id.length);
-  newdiv2.classList.add("custom-select");
-  newdiv2.innerHTML = selectcreat;
-  
+  newdiv2.id = id;
+  newdiv2.classList.add("div_inline_block");
+
+  const newdiv3 = document.createElement("div");
+  newdiv3.id = "divselect_"+id.slice(16,id.length);
+  newdiv3.classList.add("custom-select");
+  newdiv3.innerHTML = selectcreat;
+  newdiv2.appendChild(newdiv3)
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
