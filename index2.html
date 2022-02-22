@@ -1092,7 +1092,7 @@ function parent(id,selectcreat) {
   alert(id.slice(0,(id.length)-1))
   
   const idd = id.slice(0,(id.length)-1);
-  const idren = idd+idd.slice(10,idd.length);
+  const idren = idd+idd.slice(9,idd.length);
   const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1)).parentElement.parentElement;
   const newdiv1 = document.createElement("div");
   newdiv1.id = "divselectschild_"+idren.slice(10,idren.length);
