@@ -807,19 +807,19 @@ const g_id = gid;
                     '{"funct":"function(){var folders = DriveApp.getFolderById(\''+g_id+'\').getFolders();var foldersm = [{\'name\':\'Select folder\',\'id\':\'Select folder\'}];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
-//<option value="No folders">No folders</option>
+
       function driveselectfolder(folders) {  
         let jText= '{"jsonResponse":'+folders[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
-        alert(jLen)
         let selectcreat = "<select>";
           if(jLen == 1){        
             selectcreat += '<option value="No folders">No folders</option>'
-      }
+      }else{
         for (let i = 0; i < jLen; i++) {
           selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
         }
+      }
         selectcreat += "</select>";
         if(document.getElementById(folders[1])!==null){
         document.getElementById(folders[1]).innerHTML = selectcreat;
@@ -1089,6 +1089,7 @@ function openinmain(div,gid) {
 }
 
 function parent(id,selectcreat) {
+  alert(id.slice(0,(id.length)-1))
   const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1));
   const idd = id.slice(0,(id.length)-1)
   const idren = idd+idd.slice(10,idd.length);
