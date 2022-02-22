@@ -878,11 +878,11 @@ const g_id = gid;
                     const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
                     const testecheck = idparentselect.getElementsByTagName("input");
                     const contchil = document.getElementById(this.parentElement.parentElement.parentElement.parentElement.id).children;
-                    
+                    alert((((this.parentNode.parentNode.id.split("_").length)-1)+1)+"-"+conts)
                     if(((this.parentNode.parentNode.id.split("_").length)-1)<contchil.length){
                       let conts = contchil.length+1;
-                      alert((((this.parentNode.parentNode.id.split("_").length)-1)+1)+"-"+conts)
-                      for(let i2 = (((this.parentNode.parentNode.id.split("_").length)-1)+1);i2<=conts;i2++){
+                      
+                      for(let i2 = ((this.parentNode.parentNode.id.split("_").length)-1);i2<=conts;i2++){
                         contchil[(((this.parentNode.parentNode.id.split("_").length)-1)+1)].remove()
                       }
                     }
