@@ -1095,24 +1095,24 @@ function parent(id,selectcreat) {
   const idren = idd+idd.slice(10,idd.length);
   const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1)).parentElement.parentElement;
   const newdiv1 = document.createElement("div");
-  newdiv1.id = "divselectschild_"+idren.slice(11,idren.length);
+  newdiv1.id = "divselectschild_"+idren.slice(10,idren.length);
   newdiv1.classList.add("div_inline_block");
 
   const newdiv2 = document.createElement("div");
-  newdiv2.id = "divselect_"+idren.slice(11,idren.length);
+  newdiv2.id = "divselect_"+idren.slice(10,idren.length);
   newdiv2.classList.add("custom-select");
   newdiv2.innerHTML = selectcreat;
   newdiv1.appendChild(newdiv2)
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
-  newimp1.id="for_parent_"+idren.slice(11,idren.length);
-  newimp1.name="for_radio_"+idren.slice(11,idren.length);
+  newimp1.id="for_parent_"+idren.slice(10,idren.length);
+  newimp1.name="for_radio_"+idren.slice(10,idren.length);
   newimp1.value="parent"
   newdiv1.appendChild(newimp1);
 
   const newlab1 = document.createElement("label");
-  newlab1.setAttribute("for", "for_parent_"+idren.slice(11,idren.length));
+  newlab1.setAttribute("for", "for_parent_"+idren.slice(10,idren.length));
   newlab1.innerText = "Parent";
   newdiv1.appendChild(newlab1);
 
@@ -1121,14 +1121,14 @@ function parent(id,selectcreat) {
 
   const newimp2 = document.createElement("input");
   newimp2.type="radio";
-  newimp2.id="for_menu_"+idren.slice(11,idren.length);
-  newimp2.name="for_radio_"+idren.slice(11,idren.length);
+  newimp2.id="for_menu_"+idren.slice(10,idren.length);
+  newimp2.name="for_radio_"+idren.slice(10,idren.length);
   newimp2.value="menu";
   newimp2.checked = true;
   newdiv1.appendChild(newimp2);
 
   const newlab2 = document.createElement("label");
-  newlab2.setAttribute("for", "for_menu_"+idren.slice(11,idren.length));
+  newlab2.setAttribute("for", "for_menu_"+idren.slice(10,idren.length));
   newlab2.innerText = "Menu";
   newdiv1.appendChild(newlab2);
 
