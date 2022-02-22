@@ -817,12 +817,9 @@ const g_id = gid;
           selectcreat += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
         }
         selectcreat += "</select>";
-        alert(folders[1])
-        alert(document.getElementById(folders[1])) 
         if(document.getElementById(folders[1])!==null){
-          
         document.getElementById(folders[1]).innerHTML = selectcreat;
-        funInit();
+        funInitselect();
         }else{
           parent(folders[1],selectcreat);
           funInitselect();
