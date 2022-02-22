@@ -798,7 +798,7 @@ const divreturn = "divselect_1";
 }
 
 function parentfolder(id,gid) {
-const divreturn = id;
+const divreturn = id+"N";
 const g_id = gid;
   google.script.run
                   .withSuccessHandler(driveselectfolder)
@@ -819,7 +819,7 @@ const g_id = gid;
         selectcreat += "</select>";
         if(document.getElementById(folders[1])!==null){
         document.getElementById(folders[1]).innerHTML = selectcreat;
-        funInitselect();
+        funInit();
         }else{
           parent(folders[1],selectcreat);
           funInitselect();
@@ -1087,7 +1087,7 @@ function openinmain(div,gid) {
 
 function parent(id,selectcreat) {
   alert(id)
-  const parentdiv1 = document.getElementById(id);
+  const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1));
   const idren = id+id.slice(10,id.length);
   alert(idren)
   const newdiv1 = document.createElement("div");
