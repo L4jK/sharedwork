@@ -878,7 +878,7 @@ const g_id = gid;
                     const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
                     const testecheck = idparentselect.getElementsByTagName("input");
                         if(testecheck[0].checked == true){ 
-                      parentfolder(this.parentNode.parentNode.classList,s.options[i].value)
+                      parentfolder(this.parentNode.parentNode.id,s.options[i].value)
                        }else{
                         genmenu(s.options[i].text,s.options[i].value)
                          }
@@ -1090,9 +1090,10 @@ function openinmain(div,gid) {
 
 function parent(id,selectcreat) {
   alert(id.slice(0,(id.length)-1))
-  const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1));
+  
   const idd = id.slice(0,(id.length)-1);
   const idren = idd+idd.slice(10,idd.length);
+  const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1)).parentElement.parentElement;
   const newdiv1 = document.createElement("div");
   newdiv1.id = "divselectschild_"+idren.slice(11,idren.length);
   newdiv1.classList.add("div_inline_block");
