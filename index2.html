@@ -1094,7 +1094,7 @@ function parent(id,selectcreat) {
   newdiv1.classList.add("divselects_class");
 
   const newdiv2 = document.createElement("div");
-  newdiv2.id = id;
+  newdiv2.id = "divselects_"+id.slice(16,id.length);
   newdiv2.classList.add("div_inline_block");
 
   const newdiv3 = document.createElement("div");
