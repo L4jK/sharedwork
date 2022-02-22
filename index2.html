@@ -878,6 +878,7 @@ const g_id = gid;
                     const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
                     const testecheck = idparentselect.getElementsByTagName("input");
                         if(testecheck[0].checked == true){ 
+                          alert(idparentselect)
                       parentfolder(this.parentNode.parentNode.id,s.options[i].value)
                        }else{
                         genmenu(s.options[i].text,s.options[i].value)
