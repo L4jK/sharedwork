@@ -798,7 +798,7 @@ const divreturn = "divselect_1";
 }
 
 function parentfolder(id,gid) {
-const divreturn = id+id.slice(15,17);
+const divreturn = id;
 const g_id = gid;
   google.script.run
                   .withSuccessHandler(driveselectfolder)
@@ -1088,30 +1088,30 @@ function openinmain(div,gid) {
 function parent(id,selectcreat) {
   alert(id.slice(0,17))
   const parentdiv1 = document.getElementById(id.slice(0,17)).parentElement;
-  
+  const idren = id+id.slice(15,17);
   const newdiv1 = document.createElement("div");
-  newdiv1.id = "divselects_"+id.slice(16,id.length);
+  newdiv1.id = "divselects_"+idren.slice(16,idren.length);
   newdiv1.classList.add("div_inline_block");
 
   const newdiv2 = document.createElement("div");
-  newdiv2.id = id;
+  newdiv2.id = idren;
   newdiv2.classList.add("divselects_class");
 
   const newdiv3 = document.createElement("div");
-  newdiv3.id = "divselect_"+id.slice(16,id.length);
+  newdiv3.id = "divselect_"+idren.slice(16,idren.length);
   newdiv3.classList.add("custom-select");
   newdiv3.innerHTML = selectcreat;
   newdiv2.appendChild(newdiv3)
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
-  newimp1.id="for_parent_"+id.slice(16,id.length);
-  newimp1.name="for_radio_"+id.slice(16,id.length);
+  newimp1.id="for_parent_"+idren.slice(16,idren.length);
+  newimp1.name="for_radio_"+idren.slice(16,idren.length);
   newimp1.value="parent"
   newdiv2.appendChild(newimp1);
 
   const newlab1 = document.createElement("label");
-  newlab1.setAttribute("for", "for_parent_"+id.slice(16,id.length));
+  newlab1.setAttribute("for", "for_parent_"+idren.slice(16,idren.length));
   newlab1.innerText = "Parent";
   newdiv2.appendChild(newlab1);
 
@@ -1120,14 +1120,14 @@ function parent(id,selectcreat) {
 
   const newimp2 = document.createElement("input");
   newimp2.type="radio";
-  newimp2.id="for_menu_"+id.slice(16,id.length);
-  newimp2.name="for_radio_"+id.slice(16,id.length);
+  newimp2.id="for_menu_"+idren.slice(16,idren.length);
+  newimp2.name="for_radio_"+idren.slice(16,idren.length);
   newimp2.value="menu";
   newimp2.checked = true;
   newdiv2.appendChild(newimp2);
 
   const newlab2 = document.createElement("label");
-  newlab2.setAttribute("for", "for_menu_"+id.slice(16,id.length));
+  newlab2.setAttribute("for", "for_menu_"+idren.slice(16,idren.length));
   newlab2.innerText = "Menu";
   newdiv2.appendChild(newlab2);
 
