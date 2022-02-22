@@ -881,7 +881,7 @@ const g_id = gid;
                     alert(((this.parentNode.parentNode.id.split("_").length)-1)+"-"+contchil.length)
                     if(((this.parentNode.parentNode.id.split("_").length)-1)<contchil.length){
                       for(let i2 = (((this.parentNode.parentNode.id.split("_").length)-1)+1);i2<=contchil.length;i2++){
-                        contchil[i2].remove()
+                        contchil[(i2-contchil.length)].remove()
                       }
                     }
                         if(testecheck[0].checked == true){ 
