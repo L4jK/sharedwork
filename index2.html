@@ -810,6 +810,7 @@ const g_id = gid;
 
       function driveselectfolder(folders) {  
         let jText;
+        alert(folders[0])
         if(folders[0] !== []){        
         jText = '{"jsonResponse":'+folders[0]+'}';
       }else{
@@ -876,7 +877,6 @@ const g_id = gid;
                 h = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
                   if (s.options[i].innerHTML == this.innerHTML) {
-                    alert(this.parentElement.parentElement.parentElement.parentElement.id+"-"+s.options[i].text+"-"+s.options[i].value)
                     const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
                     const testecheck = idparentselect.getElementsByTagName("input");
                         if(testecheck[0].checked == true){ 
@@ -1091,11 +1091,9 @@ function openinmain(div,gid) {
 }
 
 function parent(id,selectcreat) {
-  alert(id)
   const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1));
   const idd = id.slice(0,(id.length)-1)
   const idren = idd+idd.slice(10,idd.length);
-  alert(idren)
   const newdiv1 = document.createElement("div");
   newdiv1.id = "divselects_"+idren.slice(11,idren.length);
   newdiv1.classList.add("div_inline_block");
