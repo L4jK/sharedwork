@@ -1088,11 +1088,11 @@ function openinmain(div,gid) {
 
 function parent(id,selectcreat) {
   alert(id)
-  const parentdiv1 = document.getElementById(id).parentElement;
-  const idren = id+id.slice(15,17);
+  const parentdiv1 = document.getElementById(id);
+  const idren = id+id.slice(10,id.length);
   alert(idren)
   const newdiv1 = document.createElement("div");
-  newdiv1.id = "divselects_"+idren.slice(16,idren.length);
+  newdiv1.id = "divselects_"+idren.slice(11,idren.length);
   newdiv1.classList.add("div_inline_block");
 
   const newdiv2 = document.createElement("div");
@@ -1100,20 +1100,20 @@ function parent(id,selectcreat) {
   newdiv2.classList.add("divselects_class");
 
   const newdiv3 = document.createElement("div");
-  newdiv3.id = "divselect_"+idren.slice(16,idren.length);
+  newdiv3.id = "divselect_"+idren.slice(11,idren.length);
   newdiv3.classList.add("custom-select");
   newdiv3.innerHTML = selectcreat;
   newdiv2.appendChild(newdiv3)
 
   const newimp1 = document.createElement("input");
   newimp1.type="radio";
-  newimp1.id="for_parent_"+idren.slice(16,idren.length);
-  newimp1.name="for_radio_"+idren.slice(16,idren.length);
+  newimp1.id="for_parent_"+idren.slice(11,idren.length);
+  newimp1.name="for_radio_"+idren.slice(11,idren.length);
   newimp1.value="parent"
   newdiv2.appendChild(newimp1);
 
   const newlab1 = document.createElement("label");
-  newlab1.setAttribute("for", "for_parent_"+idren.slice(16,idren.length));
+  newlab1.setAttribute("for", "for_parent_"+idren.slice(11,idren.length));
   newlab1.innerText = "Parent";
   newdiv2.appendChild(newlab1);
 
@@ -1122,8 +1122,8 @@ function parent(id,selectcreat) {
 
   const newimp2 = document.createElement("input");
   newimp2.type="radio";
-  newimp2.id="for_menu_"+idren.slice(16,idren.length);
-  newimp2.name="for_radio_"+idren.slice(16,idren.length);
+  newimp2.id="for_menu_"+idren.slice(11,idren.length);
+  newimp2.name="for_radio_"+idren.slice(11,idren.length);
   newimp2.value="menu";
   newimp2.checked = true;
   newdiv2.appendChild(newimp2);
