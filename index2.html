@@ -872,11 +872,11 @@ const g_id = gid;
                 h = this.parentNode.previousSibling;
                 for (i = 0; i < sl; i++) {
                   if (s.options[i].innerHTML == this.innerHTML) {
-                    alert(this.parentElement.parentElement.parentElement.id+"-"+s.options[i].text+"-"+s.options[i].value)
+                    alert(this.parentElement.parentElement.parentElement.parentElement.id+"-"+s.options[i].text+"-"+s.options[i].value)
                     const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
                     const testecheck = idparentselect.getElementsByTagName("input");
                         if(testecheck[0].checked == true){ 
-                      parentfolder(this.parentElement.parentElement.parentElement.id,s.options[i].value)
+                      parentfolder(this.parentElement.parentElement.parentElement.parentElement.id,s.options[i].value)
                        }else{
                         genmenu(s.options[i].text,s.options[i].value)
                          }
