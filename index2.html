@@ -808,8 +808,13 @@ const g_id = gid;
                   )
 }
 
-      function driveselectfolder(folders) {               
-        let jText = '{"jsonResponse":'+folders[0]+'}';
+      function driveselectfolder(folders) {  
+        let jText;
+        if(folders[0] !== []){        
+        jText = '{"jsonResponse":'+folders[0]+'}';
+      }else{
+        jText = '{"jsonResponse":'+[{"name":"No folders","id":"No folders"}]+'}';
+      }
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
         let selectcreat = "<select>";
