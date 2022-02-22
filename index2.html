@@ -884,7 +884,7 @@ const g_id = gid;
                     if(((this.parentNode.parentNode.id.split("_").length)-1)<conts1){
                       
                       
-                      for(let i2 = 0;i2<=conts1+1;i2++){
+                      for(let i2 = conts1+1;i2>=0;i2--){
                         alert(contchil1[i2].id)
                       if(i2>(((this.parentNode.parentNode.id.split("_").length)-1))-1){
                         alert(((this.parentNode.parentNode.id.split("_").length)-1)+"-"+conts1+"-"+contchil1[i2].id)
