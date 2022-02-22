@@ -1099,8 +1099,6 @@ function openinmain(div,gid) {
 }
 
 function parent(id,selectcreat) {
-  alert(id.slice(0,(id.length)-1))
-  
   const idd = id.slice(0,(id.length)-1);
   const idren = idd+idd.slice(((idd.length)-2),idd.length);
   const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1)).parentElement.parentElement;
