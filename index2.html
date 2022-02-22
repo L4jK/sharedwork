@@ -888,7 +888,7 @@ const g_id = gid;
                           alert(((this.parentNode.parentNode.id.split("_").length)-1))
                       parentfolder(this.parentNode.parentNode.id,s.options[i].value)
                        }else{
-                        genmenu(s.options[i].text,s.options[i].value)
+                        genmenu(this.parentNode.parentNode.id,s.options[i].text,s.options[i].value)
                          }
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
@@ -1078,10 +1078,10 @@ function removeclone(id) {
   }else{
 }
 }
-function genmenu(name,gid) {
+function genmenu(id,name,gid) {
   const menu = document.getElementById("nav_menu")
   const newnav1 = document.createElement("a");
-  newnav1.id = "button_nav_"+name;
+  newnav1.id = "button_nav_"+id.slice(10,id.length);
   newnav1.innerText = name;
   newnav1.setAttribute("onclick", "openinmain(this,'"+gid+"')");
   menu.appendChild(newnav1);
