@@ -878,7 +878,7 @@ const g_id = gid;
                     const idparentselect = document.getElementById(this.parentElement.parentElement.parentElement.id);
                     const testecheck = idparentselect.getElementsByTagName("input");
                         if(testecheck[0].checked == true){ 
-                          alert(((this.parentNode.parentNode.id.split("_").length)-1)/2)
+                          alert(((this.parentNode.parentNode.id.split("_").length)-1))
                       parentfolder(this.parentNode.parentNode.id,s.options[i].value)
                        }else{
                         genmenu(s.options[i].text,s.options[i].value)
@@ -1093,7 +1093,7 @@ function parent(id,selectcreat) {
   alert(id.slice(0,(id.length)-1))
   
   const idd = id.slice(0,(id.length)-1);
-  const idren = idd+idd.slice(9,idd.length);
+  const idren = idd+idd.slice(((idd.length)-2),idd.length);
   const parentdiv1 = document.getElementById(id.slice(0,(id.length)-1)).parentElement.parentElement;
   const newdiv1 = document.createElement("div");
   newdiv1.id = "divselectschild_"+idren.slice(10,idren.length);
