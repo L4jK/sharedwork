@@ -778,7 +778,7 @@ var span = document.getElementById("headerselected");
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
                   .autofunction(
-            '{"funct":"function(){var folders = DriveApp.searchFolders(\'sharedWithMe = true\');var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
+            '{"funct":"function(){var folders = DriveApp.searchFolders(\'sharedWithMe = true\');var foldersm = [{\'name\':\'Select folder\',\'id\':\'Select folder\'}];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
 
@@ -793,7 +793,7 @@ const divreturn = "divselect_1";
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
+                    '{"funct":"function(){var folders = DriveApp.getRootFolder().getFolders();var foldersm = [{\'name\':\'Select folder\',\'id\':\'Select folder\'}];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
 
@@ -804,7 +804,7 @@ const g_id = gid;
                   .withSuccessHandler(driveselectfolder)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var folders = DriveApp.getFolderById(\''+g_id+'\').getFolders();var foldersm = [];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
+                    '{"funct":"function(){var folders = DriveApp.getFolderById(\''+g_id+'\').getFolders();var foldersm = [{\'name\':\'Select folder\',\'id\':\'Select folder\'}];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
 
