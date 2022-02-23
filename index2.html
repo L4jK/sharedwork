@@ -768,6 +768,7 @@ var modal = document.getElementById("modalsharedshare");
   modal.style.display = "block";
 }
 function shared() {
+  clear();
 var modal = document.getElementById("modalsharedshare");
 var span = document.getElementById("headerselected");
   span.style.color =  "#4CAF50";
@@ -783,6 +784,7 @@ var span = document.getElementById("headerselected");
 }
 
 function share() {
+  clear();
 var modal = document.getElementById("modalsharedshare");
 var span = document.getElementById("headerselected");
   span.style.color = "#f4511e";
@@ -1046,7 +1048,7 @@ for(let k = 0;k<idremove.children.length;k++){
   for(let l = 0;l<menu.length;l++){
     if(idremove.children[k].id.slice(15,idremove.children[k].id.length) == menu[l].id.slice(10,menu[l].id.length)){
       menu[l].remove();
-    }//
+    }
 }
 }
   const divsg = idremove.parentElement;
@@ -1155,8 +1157,13 @@ function parent(id,selectcreat) {
   newlab2.innerText = "Menu";
   newdiv1.appendChild(newlab2);
 
-  
   parentdiv1.appendChild(newdiv1);
+}
+function clear(){
+  const list = document.getElementById("nav_menu");
+  while (list.hasChildNodes()) {
+    list.removeChild(list.firstChild);
+    }
 }
         </script>
 </body>
