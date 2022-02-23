@@ -1090,9 +1090,9 @@ function removeclone(id) {
   }else{
 }
 const menu = document.getElementById("nav_menu").children
-for(let k = 0;k<menu.length;k++){
+for(let k = 0;k<divsg.children.length;k++){
   for(let l = 0;l<menu.length;l++){
-    alert(divsg.children[k].id+"-"+menu[l].id.slice(11,menu[l].id.length))
+    alert(divsg.children[k].id+"-"+menu[l].id.slice(10,menu[l].id.length))
     if(divsg.children[k].id.slice(17,divsg.children[k].id.length) == menu[l].id.slice(11,menu[l].id.length)){
       menu[l].remove();
     }//.slice(10,divsg.children[k].id.length)
