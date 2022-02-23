@@ -887,7 +887,7 @@ const g_id = gid;
                       for(let i2 = conts1-1;i2>=0;i2--){
                         //alert(contchil1[i2].id)
                       if(i2>(((this.parentNode.parentNode.id.split("_").length)-1))-1){
-                        if(document.getElementById("button_nav_"+contchil1[i2].id.slice(16,(contchil1[i2].id.length)-1)) !== null){
+                        if(document.getElementById("button_nav_"+contchil1[i2].id.slice(16,(contchil1[i2].id.length)-1)) !== "null"){
                           document.getElementById("button_nav_"+contchil1[i2].id.slice(16,(contchil1[i2].id.length)-1)).remove();
                           alert("button_nav_"+contchil1[i2].id.slice(16,(contchil1[i2].id.length)-1))
                         }
