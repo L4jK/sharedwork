@@ -1046,6 +1046,7 @@ function clone(id,divs) {
 }
 function removeclone(id) {
   const menu = document.getElementById("nav_menu").children;
+  alert(id.children.length)
 for(let k = 0;k<id.children.length;k++){
   for(let l = 0;l<menu.length;l++){
     alert(id.children[k].id.slice(10,id.length)+"-"+menu[l].id.slice(9,menu[l].id.length))
