@@ -1049,8 +1049,8 @@ function removeclone(id) {
   const idremove = document.getElementById(id);
 for(let k = 0;k<idremove.children.length;k++){
   for(let l = 0;l<menu.length;l++){
-    alert(idremove.children[k].id.slice(10,id.length)+"-"+menu[l].id.slice(9,menu[l].id.length))
-    if(idremove.children[k].id.slice(10,id.length) == menu[l].id.slice(11,menu[l].id.length)){
+    alert(idremove.children[k].id.slice(10,idremove.children[k].id.length)+"-"+menu[l].id.slice(10,menu[l].id.length))
+    if(idremove.children[k].id.slice(10,idremove.children[k].id.length) == menu[l].id.slice(10,menu[l].id.length)){
       menu[l].remove();
     }//
 }
