@@ -1046,17 +1046,17 @@ function clone(id,divs) {
 }
 function removeclone(id) {
   const menu = document.getElementById("nav_menu").children;
-  alert(id.children.length)
-for(let k = 0;k<id.children.length;k++){
+  const idremove = document.getElementById(id);
+for(let k = 0;k<idremove.children.length;k++){
   for(let l = 0;l<menu.length;l++){
-    alert(id.children[k].id.slice(10,id.length)+"-"+menu[l].id.slice(9,menu[l].id.length))
-    if(id.children[k].id.slice(10,id.length) == menu[l].id.slice(11,menu[l].id.length)){
+    alert(idremove.children[k].id.slice(10,id.length)+"-"+menu[l].id.slice(9,menu[l].id.length))
+    if(idremove.children[k].id.slice(10,id.length) == menu[l].id.slice(11,menu[l].id.length)){
       menu[l].remove();
     }//
 }
 }
-  const divsg = document.getElementById(id).parentElement;
-  document.getElementById(id).remove();
+  const divsg = idremove.parentElement;
+  idremove.remove();
   let numb = document.getElementById(divsg.id).children.length;
  
   if(numb>=4){
