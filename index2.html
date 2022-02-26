@@ -377,7 +377,7 @@
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-    z-index: 1;
+    z-index: 4;
     opacity: 0;
     transition: opacity 0.3s;
 }   
@@ -581,6 +581,38 @@
 .show{
 display: block;
 }
+.sidepanel  {
+  width: 67px;
+  position: fixed;
+  z-index: 5;
+  max-height: 350px;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.2;
+  text-overflow:clip;
+  white-space: nowrap;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 2px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidepanel a:hover {
+  color: #f1f1f1;
+  overflow: visible;
+}
+.sidepanel:hover {
+  width: 250px;
+  opacity: 1;
+}
         </style>
 </head>
 <body onload="start()">
@@ -756,6 +788,14 @@ display: block;
 
       <div id="main_content" class="main_content_classh">oi</div>
 
+      <div id="Sidepanel" class="sidepanel">
+        <a href="#"><i class="fa fa-fw fa-home fa-2x"></i>Home</a> 
+         <a href="#"><i class="fa fa-fw fa-search fa-2x"></i> Search</a>
+         <a href="#"><i class="fa fa-fw fa-envelope fa-2x"></i> Contact</a>
+         <a href="#"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>Loading...</a>
+         <a href="#"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i>Loading...</a>
+       </div>
+       
       <div id="snackbar"></div>
       
       <script>
