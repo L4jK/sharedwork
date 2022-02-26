@@ -598,7 +598,7 @@ display: block;
   text-overflow:clip;
   white-space: nowrap;
 }
-.sidepanel a {
+.sidepanel a , .sidepanel_dropdown-btn{
   padding: 8px 8px 8px 2px;
   text-decoration: none;
   font-size: 25px;
@@ -606,13 +606,39 @@ display: block;
   display: block;
   transition: 0.3s;
 }
-.sidepanel a:hover {
+.sidepanel_dropdown-btn{
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: none;
+  transition: 0.3s;
+}
+.sidepanel a:hover, .sidepanel_dropdown-btn:hover {
   color: #f1f1f1;
   overflow: visible;
 }
-.sidepanel:hover {
+.sidepanel:hover{
   width: 250px;
   opacity: 1;
+}
+.sidepanel:hover .sidepanel_dropdown-btn {
+  display: inline-block;
+}
+.sidepanel_active {
+  background-color: green;
+  color: white;
+}
+.sidepanel_dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+.span_inline_block{
+  display: inline-block;
 }
         </style>
 </head>
@@ -791,24 +817,24 @@ display: block;
 
       <div id="Sidepanel" class="sidepanel">
         <span class="">
-          <i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>Loading...
+          <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>Loading...
         </span>
         <span class="">
-          <i class="fa fa-check-circle fa-2x fa-fw"></i>Ok!
+          <i class="fa fa-check-circle fa-3x fa-fw"></i>Ok!
         </span>
         <br>
-        
+        <span class=""><i class="fa fa-fw fa-envelope fa-3x span_inline_block"></i>
+          <button class="dropdown-btn sidepanel_dropdown-btn">Dropdown 
+           <i class="fa fa-caret-down"></i>
+         </button>
+         <div class="sidepanel_dropdown-container">
+           <a href="#">Link 1</a>
+           <a href="#">Link 2</a>
+           <a href="#">Link 3</a>
+         </div></span>
         <a href="#"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>Loading...</a>
         <a href="#"><i class="fa fa-check-circle fa-2x fa-fw"></i>Ok!</a> 
          <a href="#"><i class="fa fa-fw fa-search fa-2x"></i> Search</a>
-         <a href="#"><i class="fa fa-fw fa-envelope fa-2x"></i> Contact</a>
-         <select class="">
-          <option>Edit</option>
-          <option>Delete</option>
-          <option>Ban</option>
-          <option class=""></option>
-          <option> Make admin</option>
-         </select>
          <a href="#"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i>Loading...</a>
        </div>
 
@@ -1220,6 +1246,19 @@ function clear(){
   while (list.hasChildNodes()) {
     list.removeChild(list.firstChild);
     }
+}
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+for (let dr = 0;dr < dropdown.length; dr++) {
+  dropdown[dr].addEventListener("click", function() {
+  this.classList.toggle("sidepanel_active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
 }
         </script>
 </body>
