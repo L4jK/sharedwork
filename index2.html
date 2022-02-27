@@ -774,7 +774,9 @@ display: block;
 <div id="configdrive" class="tabmodalcontent">
   <div id="configdrive_child" class="div_inline_block">
   <h3>config drive</h3>
-  
+  <p>edit ou crie um novo profile.</p>
+  <button id="button_new_profile" class="button_add show" onclick="clone('divselects_1','configdrive_child')">+</button>
+
   <p>configure pastas e compartilhamentos.</p>
   <div id="divselects_1" class="divselects_class">
     <div id="divselectschild_1" class="div_inline_block">
@@ -838,9 +840,7 @@ display: block;
            <i class="fa fa-caret-down"></i>
          </button>
          <div id="dropdownprofiles" class="sidepanel_dropdown-container">
-           <a href="#">Link 1</a>
-           <a href="#">Link 2</a>
-           <a href="#">Link 3</a>
+
          </div></span>
         
        </div>
@@ -857,7 +857,7 @@ var modal = document.getElementById("modalsharedshare");
   modal.style.display = "block";
 }
 
-function testfolderconfig() {
+function testcreategetfolderconfigfiles() {
 const divreturn = "dropdownprofiles";
   google.script.run
                   .withSuccessHandler(drivechildfiles)
