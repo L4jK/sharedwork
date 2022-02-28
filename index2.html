@@ -1104,17 +1104,17 @@ function menuposition(p) {
   } else {
   if (p.value == "Horizontal") {
     element_menu.className = "menu menuh";
-    for(let i = 0;i<child_main_content.className.length;i++){
-    child_main_content.className[i].classList.add("main_content_classh");
-    child_main_content.className[i].classList.remove("main_content_classv");
+    for(let i = 0;i<class_main_content.className.length;i++){
+      class_main_content.className[i].classList.add("main_content_classh");
+      class_main_content.className[i].classList.remove("main_content_classv");
     }
     document.getElementById("menuh").checked = true;
     document.getElementById("menuv").checked = false;
   } else {
     element_menu.className = "menu menuv";
-    for(let i = 0;i<child_main_content.className.length;i++){
-    child_main_content.className[i].classList.add("main_content_classv");  
-    child_main_content.className[i].classList.remove("main_content_classh");
+    for(let i = 0;i<class_main_content.className.length;i++){
+      class_main_content.className[i].classList.add("main_content_classv");  
+      class_main_content.className[i].classList.remove("main_content_classh");
     }
     document.getElementById("menuv").checked = true;
     document.getElementById("menuh").checked = false;
