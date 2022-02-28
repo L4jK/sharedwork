@@ -973,7 +973,7 @@ const g_id = gid;
         let jText= '{"jsonResponse":'+files[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
-        const selectcreat = "";
+        var selectcreat = "";
           if(jLen == 1){    
             selectcreat += '<table id="tablelistfiles">';   
               selectcreat += '<tr class="tablelistfiles_header">'; 
