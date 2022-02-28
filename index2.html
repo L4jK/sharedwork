@@ -775,8 +775,9 @@ display: block;
   <div id="configdrive_child" class="div_inline_block">
   <h3>config drive</h3>
   <p>edit ou crie um novo profile.</p>
-  <button id="button_new_profile" class="button_add show" onclick="clone('divselects_1','configdrive_child')">+</button>
+  <button id="button_new_profile" class="button_add" onclick="clone('divselects_1','configdrive_child')">+</button>
 
+  <button id="button_save_profile" class="button_save" onclick="clone('divselects_1','configdrive_child')">+</button>
   <p>configure pastas e compartilhamentos.</p>
   <div id="divselects_1" class="divselects_class">
     <div id="divselectschild_1" class="div_inline_block">
@@ -825,7 +826,7 @@ display: block;
         <a id="button_nav_0">Adicione as pastas ao menu nas configurações</a>
       </div>
 
-      <div id="main_content" class="main_content_classh">oi</div>
+      <div id="main_content" class="child_content main_content_classh">oi</div>
 
       <div id="Sidepanel" class="sidepanel">
         <span class="hidden" style="color:orange;">
@@ -909,12 +910,25 @@ const g_id = gid;
                     '{"funct":"function(){var folders = DriveApp.getFolderById(\''+g_id+'\').getFolders();var foldersm = [{\'name\':\'Select folder\',\'id\':\'Select folder\'}];while (folders.hasNext()) { var foldersn = new Object();var folder = folders.next();foldersn.name = folder.getName();foldersn.id = folder.getId();foldersm.push(foldersn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
+function childfile(id,gid) {
+const divreturn = id+"N";
+const g_id = gid;
+  google.script.run
+                  .withSuccessHandler(driveselectfolder)
+                  .withFailureHandler(onFailure)
+                  .autofunction(
+                    '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
+                  )
+}
+
+
 
       function drivechildfiles(files) {  
         let jText= '{"jsonResponse":'+files[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
         let selectcreat;
+        if(document.getElementById(files[1])!==null){
           if(jLen == 1){        
             selectcreat += '<a value="No file">No file</a>'
       }else{
@@ -923,8 +937,13 @@ const g_id = gid;
         }
       }
         document.getElementById(files[1]).innerHTML = selectcreat;
+      }else{
+          child(folders[1],selectcreat);
+        }
       }
       
+
+
       function driveselectfolder(folders) {  
         let jText= '{"jsonResponse":'+folders[0]+'}';
         const obj = JSON.parse(jText);
@@ -1071,7 +1090,7 @@ const g_id = gid;
 
 function menuposition(p) {
   const element_menu = document.getElementById("nav_menu");
-  const element_main_content = document.getElementById("main_content");
+  const class_main_content = document.getElementsByClassName("child_content");
  
   if (p == undefined){
     if (element_menu.className == "menu menuh") {
@@ -1084,12 +1103,18 @@ function menuposition(p) {
   } else {
   if (p.value == "Horizontal") {
     element_menu.className = "menu menuh";
-    element_main_content.className = "main_content_classh";
+    for(let i = 0;i<child_main_content.className.length;i++){
+    child_main_content.className[i].classList.add("main_content_classh");
+    child_main_content.className[i].classList.remove("main_content_classv");
+    }
     document.getElementById("menuh").checked = true;
     document.getElementById("menuv").checked = false;
   } else {
     element_menu.className = "menu menuv";
-    element_main_content.className = "main_content_classv";
+    for(let i = 0;i<child_main_content.className.length;i++){
+    child_main_content.className[i].classList.add("main_content_classv");  
+    child_main_content.className[i].classList.remove("main_content_classh");
+    }
     document.getElementById("menuv").checked = true;
     document.getElementById("menuh").checked = false;
   }
@@ -1274,6 +1299,14 @@ function parent(id,selectcreat) {
 
   parentdiv1.appendChild(newdiv1);
 }
+
+function child(id,selectcreat){
+  const newdiv1 = document.createElement("div");
+  newdiv1.id = "main_content_"+id.slice(11,id.length);
+  newdiv1.classList.add("child_content");
+  newdiv1.classList.add("hidden");
+}
+
 function clear(){
   const list = document.getElementById("nav_menu");
   while (list.hasChildNodes()) {
