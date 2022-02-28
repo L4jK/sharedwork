@@ -1267,10 +1267,10 @@ function openinmain(divnav,idmain) {
   }
   divnav.classList.add("activeitemmenu");
   const class_main_content = document.getElementsByClassName("child_content");
-  for(let j = 1;j<class_main_content.length;j++){
-    if(class_main_content.className[j].className !== "hidden"){
-      class_main_content.className[j].classList.add("hidden");  
-      class_main_content.className[j].classList.remove("show");
+  for(let j = 0;j<class_main_content.length;j++){
+    if(class_main_content[j].className !== "hidden"){
+      class_main_content[j].classList.add("hidden");  
+      class_main_content[j].classList.remove("show");
   }
     }
     document.getElementById(idmain).classList.add("show");
