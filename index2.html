@@ -918,7 +918,7 @@ const g_id = gid;
                   .withSuccessHandler(drivechildfiles)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
+                    '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
 
