@@ -1245,7 +1245,7 @@ function genmenu(id,name,gid) {
   newnav1.innerText = name;
   newnav1.setAttribute("onclick", "openinmain(this,'"+gid+"')");
   menu.appendChild(newnav1);
-  childfile(id,gid);
+  childfile("button_nav_"+id.slice(10,id.length),gid);
 }
 
 function openinmain(div,gid) {
