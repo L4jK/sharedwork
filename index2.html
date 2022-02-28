@@ -829,10 +829,10 @@ display: block;
       <div id="main_content" class="child_content show main_content_classh">oi</div>
 
       <div id="Sidepanel" class="sidepanel">
-        <span class="hidden" style="color:orange;">
+        <span id="loading_side" class="hidden" style="color:orange;">
           <i class="fa fa-spinner fa-pulse fa-2x fa-fw" ></i>Status: Loading...
         </span>
-        <span class="" style="color:green;">
+        <span id="ok_side" class="" style="color:green;">
           <i class="fa fa-check-circle fa-2x fa-fw" ></i>Status: Ok!
         </span>
         <a onclick="opemmodalsharedshare()"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i>Change Mode</a>
@@ -860,6 +860,8 @@ var modal = document.getElementById("modalsharedshare");
 }
 
 function testcreategetfolderconfigfiles() {
+  document.getElementById("loading_side").className = "show";
+  document.getElementById("ok_side").className = "hidden";
 const divreturn = "dropdownprofiles";
   google.script.run
                   .withSuccessHandler(drivechildfiles)
@@ -870,6 +872,8 @@ const divreturn = "dropdownprofiles";
 }
 
 function shared() {
+  document.getElementById("loading_side").className = "show";
+  document.getElementById("ok_side").className = "hidden";
   clear();
 var modal = document.getElementById("modalsharedshare");
 var span = document.getElementById("headerselected");
@@ -886,6 +890,8 @@ var span = document.getElementById("headerselected");
 }
 
 function share() {
+  document.getElementById("loading_side").className = "show";
+  document.getElementById("ok_side").className = "hidden";
   clear();
 var modal = document.getElementById("modalsharedshare");
 var span = document.getElementById("headerselected");
@@ -902,6 +908,8 @@ const divreturn = "divselect_1";
 }
 
 function parentfolder(id,gid) {
+  document.getElementById("loading_side").className = "show";
+  document.getElementById("ok_side").className = "hidden";
 const divreturn = id+"N";
 const g_id = gid;
   google.script.run
@@ -912,6 +920,8 @@ const g_id = gid;
                   )
 }
 function childfile(id,gid) {
+  document.getElementById("loading_side").className = "show";
+   document.getElementById("ok_side").className = "hidden";
 const divreturn = id;
 const g_id = gid;
   google.script.run
@@ -1086,6 +1096,8 @@ const g_id = gid;
         document.addEventListener("click", closeAllSelect);
         x[0].classList.add("custom-select_recreate");
             x[0].classList.remove("custom-select");
+            document.getElementById("loading_side").className = "hidden";
+               document.getElementById("ok_side").className = "show";
       }
 
 
@@ -1315,6 +1327,8 @@ function child(id,selectcreat){
   newdiv1.classList.add("child_content");
   newdiv1.classList.add("hidden");
   document.getElementsByTagName("body")[0].insertBefore(newdiv1, document.getElementById("main_content"));
+  document.getElementById("loading_side").className = "hidden";
+   document.getElementById("ok_side").className = "show";
 }
 
 function clear(){
