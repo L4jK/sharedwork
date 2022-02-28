@@ -939,7 +939,6 @@ const g_id = gid;
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
         let selectcreat;
-        if(document.getElementById(files[1])!==null){
           if(jLen == 1){        
             selectcreat += '<a value="No file">No file</a>'
       }else{
@@ -947,6 +946,7 @@ const g_id = gid;
           selectcreat += '<a value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</a>';
         }
       }
+      if(document.getElementById(files[1])!==null){
         document.getElementById(files[1]).innerHTML = selectcreat;
       }else{
           child(files[1],selectcreat);
