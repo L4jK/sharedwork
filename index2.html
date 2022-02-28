@@ -1327,6 +1327,7 @@ function child(id,selectcreat){
   newdiv1.id = id;
   newdiv1.classList.add("child_content");
   newdiv1.classList.add("hidden");
+  newdiv1.innerHTML = selectcreat;
   document.getElementsByTagName("body")[0].insertBefore(newdiv1, document.getElementById("main_content"));
   document.getElementById("loading_side").className = "hidden";
    document.getElementById("ok_side").className = "show";
