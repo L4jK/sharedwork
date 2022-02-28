@@ -1116,17 +1116,17 @@ function menuposition(p) {
   } else {
   if (p.value == "Horizontal") {
     element_menu.className = "menu menuh";
-    for(let i = 0;i<class_main_content.className.length;i++){
-      class_main_content.className[i].classList.add("main_content_classh");
-      class_main_content.className[i].classList.remove("main_content_classv");
+    for(let i = 0;i<class_main_content.length;i++){
+      class_main_content[i].classList.add("main_content_classh");
+      class_main_content[i].classList.remove("main_content_classv");
     }
     document.getElementById("menuh").checked = true;
     document.getElementById("menuv").checked = false;
   } else {
     element_menu.className = "menu menuv";
-    for(let i = 0;i<class_main_content.className.length;i++){
-      class_main_content.className[i].classList.add("main_content_classv");  
-      class_main_content.className[i].classList.remove("main_content_classh");
+    for(let i = 0;i<class_main_content.length;i++){
+      class_main_content[i].classList.add("main_content_classv");  
+      class_main_content[i].classList.remove("main_content_classh");
     }
     document.getElementById("menuv").checked = true;
     document.getElementById("menuh").checked = false;
@@ -1323,12 +1323,18 @@ function parent(id,selectcreat) {
 }
 
 function child(id,selectcreat){
+  const main = document.getElementById("main_content");
   const newdiv1 = document.createElement("div");
   newdiv1.id = id;
   newdiv1.classList.add("child_content");
   newdiv1.classList.add("hidden");
+  if(main.className == "main_content_classh"){
+    newdiv1.classList.add("main_content_classh");
+    }else if(main.className == "main_content_classv"){
+      newdiv1.classList.add("main_content_classv");
+      }
   newdiv1.innerHTML = selectcreat;
-  document.getElementsByTagName("body")[0].insertBefore(newdiv1, document.getElementById("main_content"));
+  document.getElementsByTagName("body")[0].insertBefore(newdiv1, main);
   document.getElementById("loading_side").className = "hidden";
    document.getElementById("ok_side").className = "show";
 }
