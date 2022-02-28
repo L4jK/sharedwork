@@ -650,6 +650,41 @@ display: block;
 .span_inline_block{
   display: inline-block;
 }
+#inputlistafiles {
+  background-image: url('https://drive.google.com/uc?id=1ak-1dTAI4Oc2qXZO1z7eVOorYaegjmXm'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 50%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  background-color: #ffffff;
+}
+
+#tablelistfiles {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+  background-color: #ffffff;
+}
+
+#tablelistfiles th{
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#tablelistfiles tr{
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#tablelistfiles tr.tablelistfiles_header, #tablelistfiles tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
         </style>
 </head>
 <body onload="start()">
@@ -928,7 +963,7 @@ const g_id = gid;
                   .withSuccessHandler(drivechildfiles)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
+                    '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesn.thumb = Drive.Files.get(file.getId()).thumbnailLink;const viewers = file.getViewers();var view = [];for(var v = 0; v < viewers.length; v++){view.push(viewers[v].getName() + \'|\' + viewers[v].getPhotoUrl());}filesn.view = view; const editors = file.getEditors();var edit = [];for(var ed = 0; ed < editors.length; ed++){edit.push(editors[ed].getName() + \'|\' + editors[ed].getPhotoUrl());};filesn.edit = edit;filesn.url = file.getUrl();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
 
@@ -938,13 +973,40 @@ const g_id = gid;
         let jText= '{"jsonResponse":'+files[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
-        let selectcreat;
-          if(jLen == 1){        
-            selectcreat += '<a value="No file">No file</a>'
+        const selectcreat;
+          if(jLen == 1){    
+            selectcreat += '<table id="tablelistfiles">';   
+              selectcreat += '<tr class="tablelistfiles_header">'; 
+                selectcreat += '<th style="width:60%;">Nome</th>';
+                selectcreat += '<th style="width:10%;">Thumb</th>';
+                selectcreat += '<th style="width:10%;">Viewers</th>';
+                selectcreat += '<th style="width:10%;">editors</th>';
+                selectcreat += '<th style="width:10%;">Link</th>';
+                selectcreat += '</tr>';
+                selectcreat += '<td>No file</td>';
+                selectcreat += '<td>No file</td>';
+                selectcreat += '<td>No file</td>';
+                selectcreat += '<td>No file</td>';
+                selectcreat += '<td>No file</td>';
       }else{
+        selectcreat += '<input type="text" id="inputlistafiles" onkeyup="filtrolistafiles()" placeholder="Search for names..">';
+          selectcreat += '<table id="tablelistfiles">';
+            selectcreat += '<tr class="tablelistfiles_header">'; 
+                selectcreat += '<th style="width:60%;">Nome</th>';
+                selectcreat += '<th style="width:10%;">Thumb</th>';
+                selectcreat += '<th style="width:10%;">Viewers</th>';
+                selectcreat += '<th style="width:10%;">editors</th>';
+                selectcreat += '<th style="width:10%;">Link</th>';
         for (let i = 0; i < jLen; i++) {
-          selectcreat += '<a value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</a>';
+          selectcreat += '</tr>';
+                selectcreat += '<td>'+obj.jsonResponse[i].name +'</td>';
+                selectcreat += '<td>'+obj.jsonResponse[i].thumb +'</td>';
+                selectcreat += '<td>'+obj.jsonResponse[i].view +'</td>';
+                selectcreat += '<td>'+obj.jsonResponse[i].edit +'</td>';
+                selectcreat += '<td><a href="'+obj.jsonResponse[i].name +'" target="_blank">link</a></td>';
         }
+        selectcreat += '</tr>';
+        selectcreat += '</table>';
       }
       if(document.getElementById(files[1])!==null){
         document.getElementById(files[1]).innerHTML = selectcreat;
@@ -1357,6 +1419,28 @@ for (let dr = 0;dr < dropdown.length; dr++) {
   dropdownContent.style.display = "block";
   }
   });
+}
+
+function filtrolistafiles() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputlistafiles");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tablelistfiles");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
 }
         </script>
 </body>
