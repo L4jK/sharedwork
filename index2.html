@@ -826,7 +826,7 @@ display: block;
         <a id="button_nav_0">Adicione as pastas ao menu nas configurações</a>
       </div>
 
-      <div id="main_content" class="child_content main_content_classh">oi</div>
+      <div id="main_content" class="child_content show main_content_classh">oi</div>
 
       <div id="Sidepanel" class="sidepanel">
         <span class="hidden" style="color:orange;">
@@ -1243,17 +1243,17 @@ function genmenu(id,name,gid) {
   const newnav1 = document.createElement("a");
   newnav1.id = "button_nav_"+id.slice(10,id.length);
   newnav1.innerText = name;
-  newnav1.setAttribute("onclick", "openinmain(this,'"+gid+"')");
+  newnav1.setAttribute("onclick", "openinmain(this,'main_content_"+id.slice(10,id.length)+"')");
   menu.appendChild(newnav1);
   childfile("main_content_"+id.slice(10,id.length),gid);
 }
 
-function openinmain(div,gid) {
+function openinmain(divnav,idmain) {
   const classmenu = document.getElementsByClassName("activeitemmenu")
   for (let i = 0; i < classmenu.length; i++) {
     classmenu[i].classList.remove("activeitemmenu");
   }
-  div.classList.add("activeitemmenu");
+  divnave.classList.add("activeitemmenu");
   const class_main_content = document.getElementsByClassName("child_content");
   for(let j = 0;j<child_main_content.className.length;j++){
     if(child_main_content.className[j].className !== "hidden"){
@@ -1261,7 +1261,7 @@ function openinmain(div,gid) {
     child_main_content.className[j].classList.remove("show");
   }
     }
-    document.getElementById("main_content_"+id.slice(11,id.length)).classList.add("show");
+    document.getElementById(idmain).classList.add("show");
 }
 
 function parent(id,selectcreat) {
