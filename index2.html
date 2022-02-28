@@ -915,7 +915,7 @@ function childfile(id,gid) {
 const divreturn = id;
 const g_id = gid;
   google.script.run
-                  .withSuccessHandler(driveselectfolder)
+                  .withSuccessHandler(drivechildfiles)
                   .withFailureHandler(onFailure)
                   .autofunction(
                     '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(foldersm)); q.push(\''+divreturn+'\'); return q;}"}'
@@ -939,7 +939,7 @@ const g_id = gid;
       }
         document.getElementById(files[1]).innerHTML = selectcreat;
       }else{
-          child(folders[1],selectcreat);
+          child(files[1],selectcreat);
         }
       }
       
@@ -1245,6 +1245,7 @@ function genmenu(id,name,gid) {
   newnav1.innerText = name;
   newnav1.setAttribute("onclick", "openinmain(this,'"+gid+"')");
   menu.appendChild(newnav1);
+  childfile(id,gid);
 }
 
 function openinmain(div,gid) {
@@ -1313,6 +1314,7 @@ function child(id,selectcreat){
   newdiv1.id = "main_content_"+id.slice(11,id.length);
   newdiv1.classList.add("child_content");
   newdiv1.classList.add("hidden");
+  document.getElementsByTagName(body).insertBefore(newdiv1, document.getElementById("main_content"));
 }
 
 function clear(){
