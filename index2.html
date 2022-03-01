@@ -366,7 +366,6 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
@@ -997,13 +996,14 @@ function childfile(id,gid) {
 const divreturn = id;
 const g_id = gid;
 const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'';
-  const divpart2 = '\'°><span class=°tooltiptext tooltip-right°>\'';
-    const divpart3 ='\'</span></div></div>\'';
+  const divpart2 = '\'°>\'';
+    const divpart3 ='\'<span class=°tooltiptext tooltip-right°>\'';
+    const divpart4 = '\'</span></div></div>\'';
   google.script.run
                   .withSuccessHandler(drivechildfiles)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesn.thumb = Drive.Files.get(file.getId()).thumbnailLink;const viewers = file.getViewers();var view = [];var divpart1 = '+divpart1+';var divpart2 = '+divpart2+';var divpart3 = '+divpart3+'; for(var v = 0; v < viewers.length; v++){view.push(divpart1+viewers[v].getPhotoUrl()+divpart2+viewers[v].getName()+divpart3);}filesn.view = view; const editors = file.getEditors();var edit = [];for(var ed = 0; ed < editors.length; ed++){edit.push(divpart1+editors[ed].getPhotoUrl()+divpart2+editors[ed].getName()+divpart3);};filesn.edit = edit;filesn.url = file.getUrl();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
+                    '{"funct":"function(){var files = DriveApp.getFolderById(\''+g_id+'\').getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesn.thumb = Drive.Files.get(file.getId()).thumbnailLink;const viewers = file.getViewers();var view = [];var divpart1 = '+divpart1+';var divpart2 = '+divpart2+';var divpart3 = '+divpart3+';var divpart4 = '+divpart4+'; for(var v = 0; v < viewers.length; v++){view.push(divpart1+viewers[v].getPhotoUrl()+divpart2+viewers[v].getName()+divpart3+viewers[v].getName()+divpart4);}filesn.view = view; const editors = file.getEditors();var edit = [];for(var ed = 0; ed < editors.length; ed++){edit.push(divpart1+editors[ed].getPhotoUrl()+divpart2+editors[ed].getName()+divpart3+editors[ed].getName()+divpart4);};filesn.edit = edit;filesn.url = file.getUrl();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
                   )
 }
 
