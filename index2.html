@@ -1018,8 +1018,8 @@ const divpart1 = '\'<div class=°chipuser°><img src=°\'';
                 selectcreat += '<th style="width:10%;">editors</th>';
                 selectcreat += '<th style="width:10%;">Link</th>';
         for (let i = 0; i < jLen; i++) {
-          const view = obj.jsonResponse[i].view;
-          const edit = obj.jsonResponse[i].edit;
+          const view = String(obj.jsonResponse[i].view);
+          const edit = String(obj.jsonResponse[i].edit);
           alert(edit)
           selectcreat += '</tr>';
                 selectcreat += '<td>'+obj.jsonResponse[i].name +'</td>';
