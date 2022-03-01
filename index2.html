@@ -997,9 +997,9 @@ function childfile(id,gid) {
    document.getElementById("ok_side").className = "hidden";
 const divreturn = id;
 const g_id = gid;
-const divpart1 = '\'<div class=°chipuser°><img src=°\'';
+const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'';
   const divpart2 = '\'°><span class=°tooltiptext tooltip-right°>\'';
-    const divpart3 ='\'</span></div>\'';
+    const divpart3 ='\'</span></div></div>\'';
   google.script.run
                   .withSuccessHandler(drivechildfiles)
                   .withFailureHandler(onFailure)
