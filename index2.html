@@ -708,6 +708,12 @@ display: block;
   width: 30px;
   border-radius: 50%;
 }
+.thumbfiles{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100px;
+}
         </style>
 </head>
 <body onload="start()">
@@ -1025,7 +1031,7 @@ const divpart1 = '\'<div class=°chipuser°><img src=°\'';
         for (let i = 0; i < jLen; i++) {
           selectcreat += '</tr>';
                 selectcreat += '<td>'+obj.jsonResponse[i].name +'</td>';
-                selectcreat += '<td><img src="'+obj.jsonResponse[i].thumb +'"></td>';
+                selectcreat += '<td><img class="thumbfiles" src="'+obj.jsonResponse[i].thumb +'"></td>';
                 selectcreat += '<td>'+String(obj.jsonResponse[i].view).replace(/°/g,'"')+'</td>';
                 selectcreat += '<td>'+String(obj.jsonResponse[i].edit).replace(/°/g,'"')+'</td>';
                 selectcreat += '<td><a href="'+obj.jsonResponse[i].name +'" target="_blank">link</a></td>';
