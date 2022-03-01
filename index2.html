@@ -666,8 +666,8 @@ display: block;
   border-collapse: collapse; /* Collapse borders */
   width: 100%; /* Full-width */
   border: 1px solid #ddd; /* Add a grey border */
-  font-size: 18px; /* Increase font-size background-color: #ffffff;*/
-  
+  font-size: 18px; /* Increase font-size */
+  background-color: #ffffff;
   overflow: auto;
 }
 
@@ -987,7 +987,6 @@ const divpart1 = '\'<div class=°chipuser°><img src=°\'';
                   )
 }
 
-//.replace(/:/g,\"\'\").replace(/°/g,\'\"\')
 
       function drivechildfiles(files) {  
         let jText= '{"jsonResponse":'+files[0]+'}';
@@ -1018,14 +1017,11 @@ const divpart1 = '\'<div class=°chipuser°><img src=°\'';
                 selectcreat += '<th style="width:10%;">editors</th>';
                 selectcreat += '<th style="width:10%;">Link</th>';
         for (let i = 0; i < jLen; i++) {
-          const view = String(obj.jsonResponse[i].view);
-          const edit = String(obj.jsonResponse[i].edit);
-          alert(edit)
           selectcreat += '</tr>';
                 selectcreat += '<td>'+obj.jsonResponse[i].name +'</td>';
                 selectcreat += '<td><img src="'+obj.jsonResponse[i].thumb +'"></td>';
-                selectcreat += '<td>'+view.replace(/º/g,"'").replace(/°/g,'"')+'</td>';
-                selectcreat += '<td>'+edit.replace(/º/g,"'").replace(/°/g,'"') +'</td>';
+                selectcreat += '<td>'+String(obj.jsonResponse[i].view).replace(/°/g,'"')+'</td>';
+                selectcreat += '<td>'+String(obj.jsonResponse[i].edit).replace(/°/g,'"')+'</td>';
                 selectcreat += '<td><a href="'+obj.jsonResponse[i].name +'" target="_blank">link</a></td>';
         }
         selectcreat += '</tr>';
