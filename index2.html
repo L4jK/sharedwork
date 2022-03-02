@@ -922,8 +922,9 @@ display: block;
       
       <script>
        function start(){
-          opemmodalsharedshare();
-          menuposition();
+        testcreategetfolderconfigfiles();
+        opemmodalsharedshare();
+        menuposition();
         };
 
 function opemmodalsharedshare() {
@@ -936,7 +937,7 @@ function testcreategetfolderconfigfiles() {
   document.getElementById("ok_side").className = "hidden";
 const divreturn = "dropdownprofiles";
   google.script.run
-                  .withSuccessHandler(drivechildfiles)
+                  .withSuccessHandler(drivefileconfigdropdown)
                   .withFailureHandler(onFailure)
                   .autofunction(
                     '{"funct":"function(){var files;if(DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next()==undefined){DriveApp.getRootFolder().createFolder(\'SharedWork_Config\')} files = DriveApp.getRootFolder().getFoldersByName("SharedWork_Config").next().getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
@@ -1055,7 +1056,20 @@ const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'
         }
       }
       
-
+      function drivefileconfigdropdown(files) {  
+        let jText= '{"jsonResponse":'+files[0]+'}';
+        const obj = JSON.parse(jText);
+        let jLen = Object.keys(obj.jsonResponse).length;
+        let selectcreat;
+          if(jLen == 1){        
+            selectcreat += '<a value="No files">No files</a'
+      }else{
+        for (let i = 0; i < jLen; i++) {
+          selectcreat += '<a value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</a>';
+        }
+      }
+        document.getElementById(files[1]).innerHTML = selectcreat;
+      }
 
       function driveselectfolder(folders) {  
         let jText= '{"jsonResponse":'+folders[0]+'}';
@@ -1077,7 +1091,6 @@ const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'
           parent(folders[1],selectcreat);
           funInitselect();
         }
-        
       }
       
         
