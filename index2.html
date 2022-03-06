@@ -970,10 +970,16 @@ function testcreategetfolderconfig() {
   document.getElementById("ok_side").className = "hidden";
 
   google.script.run
+                  .withSuccessHandler(testefolderconfig)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var files;try{DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next()}catch(err){DriveApp.getRootFolder().createFolder(\'SharedWork_Config\');}}"}'
+                    '{"funct":"function(){var files;try{DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next();return \'old\';}catch(err){DriveApp.getRootFolder().createFolder(\'SharedWork_Config\');return \'new\';}}"}'
                   )
+function testefolderconfig(status){
+  if(status !=='new'){
+    getconfigfiles();
+  }
+}
 }
 
 function newconfigfile(dados) {
@@ -989,8 +995,9 @@ if(dados==undefined){
                   .autofunction(
                     '{"funct":"function(){var files;var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\',MimeType.PLAIN_TEXT);}"}'
                   )
-  document.getElementById("loading_side").className = "hidden";
-  document.getElementById("ok_side").className = "show";
+  //document.getElementById("loading_side").className = "hidden";
+  //document.getElementById("ok_side").className = "show";
+  getconfigfiles();
 }
 
 function getconfigfiles() {
