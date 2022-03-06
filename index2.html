@@ -941,7 +941,7 @@ function testcreategetfolderconfig() {
   google.script.run
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var files;if(DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next()==undefined){DriveApp.getRootFolder().createFolder(\'SharedWork_Config\');}"}'
+                    '{"funct":"function(){var files;if(DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next()==undefined){DriveApp.getRootFolder().createFolder(\'SharedWork_Config\');}}"}'
                   )
 }
 
