@@ -995,8 +995,6 @@ if(dados==undefined){
                   .autofunction(
                     '{"funct":"function(){var files;var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\',MimeType.PLAIN_TEXT);}"}'
                   )
-  //document.getElementById("loading_side").className = "hidden";
-  //document.getElementById("ok_side").className = "show";
   getconfigfiles();
 }
 
@@ -1137,6 +1135,9 @@ const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'
         }
       }
         document.getElementById(files[1]).innerHTML = selectcreat;
+
+        document.getElementById("loading_side").className = "hidden";
+        document.getElementById("ok_side").className = "show";
       }
 
       function driveselectfolder(folders) {  
