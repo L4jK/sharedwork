@@ -987,7 +987,7 @@ if(dados==undefined){
   google.script.run
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var files;var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\');"}'
+                    '{"funct":"function(){var files;var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\');}"}'
                   )
 }
 
