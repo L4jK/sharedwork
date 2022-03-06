@@ -723,6 +723,23 @@ display: block;
   padding: 5px;
   width: 100px;
 }
+#inputnewprofile{
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+  display: inline-block;
+}
+
+#button_create_profile{
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 16px;
+  display: inline-block;
+}
         </style>
 </head>
 <body onload="start()">
@@ -847,8 +864,11 @@ display: block;
   <div id="configdrive_child" class="div_inline_block">
   <h3>config drive</h3>
   <p>edit ou crie um novo profile.</p>
-  <button id="button_new_profile" class="button_add" onclick="clone('divselects_1','configdrive_child')">+</button>
-
+  <button id="button_new_profile" class="button_add" onclick="display('divcreatenewprofile')">+</button>
+  <div id="divcreatenewprofile" class="hidden">
+    <input id="inputnewprofile" type="text" name="newprofile" placeholder="New profile">
+    <button id="button_create_profile" onclick="javascript:alert('Hello World!')">criar</button>
+  </div>
   <button id="button_save_profile" class="button_save" onclick="clone('divselects_1','configdrive_child')">+</button>
   <p>configure pastas e compartilhamentos.</p>
   <div id="divselects_1" class="divselects_class">
@@ -945,12 +965,13 @@ function testcreategetfolderconfig() {
                   )
 }
 
-function newconfigfile(nameconfigfile,dados) {
+function newconfigfile(dados) {
   document.getElementById("loading_side").className = "show";
   document.getElementById("ok_side").className = "hidden";
-const namefile = nameconfigfile;
+const namefile = document.getElementById("inputnewprofile").value;
 var filedados;
-if(dados==undefined){filedados = "config profile sharedwork";
+if(dados==undefined){
+  filedados = "config profile sharedwork";
 }else{filedados = dados}
   google.script.run
                   .withFailureHandler(onFailure)
@@ -1520,6 +1541,14 @@ function filtrolistafiles() {
         tr[i].style.display = "none";
       }
     }
+  }
+}
+function display(id){
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
 }
         </script>
