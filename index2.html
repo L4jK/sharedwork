@@ -740,6 +740,10 @@ display: block;
   font-size: 16px;
   display: inline-block;
 }
+#button_save_profile{
+  right:0px;
+  cursor: pointer;
+}
         </style>
 </head>
 <body onload="start()">
@@ -862,6 +866,10 @@ display: block;
 
 <div id="configdrive" class="tabmodalcontent">
   <div id="configdrive_child" class="div_inline_block">
+    <span id="button_save_profile" class="fa-stack fa-lg" onclick="">
+      <i class="fa fa-cloud fa-stack-2x"></i>
+      <i class="fa fa-floppy-o fa-stack-1x" style="color:white;"></i>
+    </span>
   <h3>config drive</h3>
   <p>edit ou crie um novo profile.</p>
   <button id="button_new_profile" class="button_add" onclick="display('divcreatenewprofile')">+</button>
@@ -869,10 +877,7 @@ display: block;
     <input id="inputnewprofile" type="text" name="newprofile" placeholder="New profile">
     <button id="button_create_profile" onclick="newconfigfile()">criar</button>
   </div>
-  <span id="button_save_profile" class="fa-stack fa-lg" onclick="">
-    <i class="fa fa-cloud fa-stack-2x"></i>
-    <i class="fa fa-floppy-o fa-stack-1x"></i>
-  </span>
+
   <p>configure pastas e compartilhamentos.</p>
   <div id="divselects_1" class="divselects_class">
     <div id="divselectschild_1" class="div_inline_block">
