@@ -853,6 +853,10 @@ display: block;
   <button class="tabmodallinks" onclick="opentabmodal(event, 'selecttype')" id="modaltabdefaultOpen">select type work</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')">config drive</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'styleconfig')">style config</button>
+  <span id="button_save_profile" class="fa-stack fa-lg" onclick="">
+    <i class="fa fa-cloud fa-stack-2x"></i>
+    <i class="fa fa-floppy-o fa-stack-1x" style="color:white;"></i>
+  </span>
 </div>
 
 <div id="selecttype" class="tabmodalcontent">
@@ -866,10 +870,6 @@ display: block;
 
 <div id="configdrive" class="tabmodalcontent">
   <div id="configdrive_child" class="div_inline_block">
-    <span id="button_save_profile" class="fa-stack fa-lg" onclick="">
-      <i class="fa fa-cloud fa-stack-2x"></i>
-      <i class="fa fa-floppy-o fa-stack-1x" style="color:white;"></i>
-    </span>
   <h3>config drive</h3>
   <p>edit ou crie um novo profile.</p>
   <button id="button_new_profile" class="button_add" onclick="display('divcreatenewprofile')">+</button>
