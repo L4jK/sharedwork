@@ -741,7 +741,9 @@ display: block;
   display: inline-block;
 }
 #button_save_profile{
-  right:0px;
+  top:20px;
+  right:15px;
+  position:absolute;
   cursor: pointer;
 }
         </style>
@@ -853,11 +855,12 @@ display: block;
   <button class="tabmodallinks" onclick="opentabmodal(event, 'selecttype')" id="modaltabdefaultOpen">select mode work</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'configdrive')">config drive</button>
   <button class="tabmodallinks" onclick="opentabmodal(event, 'styleconfig')">style config</button>
-  <span id="button_save_profile" class="fa-stack fa-lg" onclick="">
-    <i class="fa fa-cloud fa-stack-2x"></i>
-    <i class="fa fa-floppy-o fa-stack-1x" style="color:white;"></i>
-  </span>
 </div>
+
+<span id="button_save_profile" class="fa-stack fa-lg" onclick="">
+  <i class="fa fa-cloud fa-stack-2x" style="color:orange;"></i>
+  <i class="fa fa-floppy-o fa-stack-1x" style="color:white;"></i>
+</span>
 
 <div id="selecttype" class="tabmodalcontent">
   <div class="div_inline_block">
