@@ -989,6 +989,8 @@ if(dados==undefined){
                   .autofunction(
                     '{"funct":"function(){var files;var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\');}"}'
                   )
+  document.getElementById("loading_side").className = "hidden";
+  document.getElementById("ok_side").className = "show";
 }
 
 //function testcreategetfolderconfigfiles() {
