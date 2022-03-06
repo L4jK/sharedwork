@@ -993,17 +993,17 @@ if(dados==undefined){
   document.getElementById("ok_side").className = "show";
 }
 
-//function testcreategetfolderconfigfiles() {
-//  document.getElementById("loading_side").className = "show";
-//  document.getElementById("ok_side").className = "hidden";
-//const divreturn = "dropdownprofiles";
-//  google.script.run
-//                  .withSuccessHandler(drivefileconfigdropdown)
- //                 .withFailureHandler(onFailure)
- //                 .autofunction(
- //                   '{"funct":"function(){var files;if(DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next()==undefined){DriveApp.getRootFolder().createFolder(\'SharedWork_Config\').createFile(\'profile_1\', \'config profile sharedwork\');} files = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next().getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
- //                 )
-//}
+function getconfigfiles() {
+  document.getElementById("loading_side").className = "show";
+  document.getElementById("ok_side").className = "hidden";
+const divreturn = "dropdownprofiles";
+  google.script.run
+                  .withSuccessHandler(drivefileconfigdropdown)
+                  .withFailureHandler(onFailure)
+                  .autofunction(
+                   '{"funct":"function(){var files = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next().getFiles();var filesm = [];while (files.hasNext()) { var filesn = new Object();var file = files.next();filesn.name = file.getName();filesn.id = file.getId();filesm.push(filesn)}const q = []; q.push(JSON.stringify(filesm)); q.push(\''+divreturn+'\'); return q;}"}'
+                  )
+}
 
 function shared() {
   document.getElementById("loading_side").className = "show";
