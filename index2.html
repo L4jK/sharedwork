@@ -1008,7 +1008,7 @@ if(dados==undefined){
                   .autofunction(
                     '{"funct":"function(){var files;try{DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next().getFilesByName(\''+namefile+'\').next(); return \'exist\';}catch(err){var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\',MimeType.PLAIN_TEXT);return \'new\';}}"}'
                   )
-function testefolderconfig(status){
+function testefileconfig(status){
   if(status !=='new'){
     newfilestatus_err.className = "show";
     newfilestatus_ok.className = "hidden"; 
