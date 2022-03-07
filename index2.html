@@ -991,9 +991,10 @@ function testefolderconfig(status){
 }
 
 function newconfigfile(dados) {
-  document.getElementById("loading_side").className = "show";
-  document.getElementById("ok_side").className = "hidden";
-
+  const loading = document.getElementById("loading_side");
+  const ok = document.getElementById("ok_side");
+  loading.className = "show";
+  ok.className = "hidden"
 const inputname = document.getElementById("inputnewprofile");
 const namefile = inputname.value;
 const newfilestatus_err = document.getElementById("newprofile_err");
@@ -1012,10 +1013,14 @@ function testefileconfig(status){
   if(status !=='new'){
     newfilestatus_err.className = "show";
     newfilestatus_ok.className = "hidden"; 
+    loading.className = "hidden";
+    ok.className = "show";
   }else{
     newfilestatus_err.className = "hidden";
     newfilestatus_ok.className = "show";
     inputname.value = "";
+    loading.className = "hidden";
+    ok.className = "show";
   }
 }                 
 }
