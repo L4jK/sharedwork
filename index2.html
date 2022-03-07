@@ -568,6 +568,18 @@
 .button_add:active {
   color: #e7e7e7;
 }
+.button_add_newprofile {
+  background:none;
+  border: none;
+  color: rgb(17, 150, 0);
+  text-align: center;
+  font-size: 50px;
+  cursor: pointer;
+  display: inline-block;
+}
+.button_add_newprofile:active {
+  color: #e7e7e7;
+}
 .button_rem {
   background:none;
   border: none;
@@ -580,6 +592,11 @@
   color: #e7e7e7;
 }
 .divselects_class{
+  border-bottom-style: dotted;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.selectprofile_class{
   border-bottom-style: dotted;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -875,7 +892,8 @@ display: block;
   <div id="configdrive_child" class="div_inline_block">
   <h3>config drive</h3>
   <p>edit ou crie um novo profile.</p>
-  <button id="button_new_profile" class="button_add" onclick="display('divcreatenewprofile')">+</button>
+  <div class="selectprofile_class">
+  <button id="button_new_profile" class="button_add_newprofile" onclick="display('divcreatenewprofile')">+</button>
   <div id="divcreatenewprofile" class="hidden">
     <input id="inputnewprofile" type="text" name="newprofile" placeholder="New profile">
     <button id="button_create_profile" onclick="newconfigfile()">criar</button>
@@ -888,6 +906,7 @@ display: block;
     </span>
   </div>
   </div>
+</div>
 
   <p>configure pastas e compartilhamentos.</p>
   <div id="divselects_1" class="divselects_class">
