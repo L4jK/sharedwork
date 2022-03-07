@@ -879,6 +879,12 @@ display: block;
   <div id="divcreatenewprofile" class="hidden">
     <input id="inputnewprofile" type="text" name="newprofile" placeholder="New profile">
     <button id="button_create_profile" onclick="newconfigfile()">criar</button>
+    <span id="newprofile_err" class="hidden" style="color:red;">
+      <i class="fa fa-times-círculo fa-2x fa-fw" ></i>
+    </span>
+    <span id="newprofile_ok" class="" style="color:green;">
+      <i class="fa fa-check-circle fa-2x fa-fw" ></i>
+    </span>
   </div>
 
   <p>configure pastas e compartilhamentos.</p>
@@ -948,6 +954,8 @@ display: block;
          <div id="dropdownprofiles" class="sidepanel_dropdown-container">
 
          </div></span>
+         
+          <a class="fa fa-refresh fa-2x fa-fw" ></a>
         
        </div>
 
@@ -985,17 +993,31 @@ function testefolderconfig(status){
 function newconfigfile(dados) {
   document.getElementById("loading_side").className = "show";
   document.getElementById("ok_side").className = "hidden";
-const namefile = document.getElementById("inputnewprofile").value;
+
+const inputname = document.getElementById("inputnewprofile");
+const namefile = inputname.value;
+const newfilestatus_err = document.getElementById("newprofile_err");
+const newfilestatus_ok = document.getElementById("newprofile_ok");
 var filedados;
 if(dados==undefined){
   filedados = "config profile sharedwork";
 }else{filedados = dados}
   google.script.run
+                  .withSuccessHandler(testefileconfig)
                   .withFailureHandler(onFailure)
                   .autofunction(
-                    '{"funct":"function(){var files;var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\',MimeType.PLAIN_TEXT);}"}'
+                    '{"funct":"function(){var files;try{DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next().getFilesByName(\''+namefile+'\').next(); return \'exist\';}catch(err){var folderconfig = DriveApp.getRootFolder().getFoldersByName(\'SharedWork_Config\').next(); folderconfig.createFile(\''+namefile+'\', \''+filedados+'\',MimeType.PLAIN_TEXT);return \'new\';}}"}'
                   )
-  getconfigfiles();
+function testefolderconfig(status){
+  if(status !=='new'){
+    newfilestatus_err.className = "show";
+    newfilestatus_ok.className = "hidden"; 
+  }else{
+    newfilestatus_err.className = "hidden";
+    newfilestatus_ok.className = "show";
+    inputname.value = "";
+  }
+}                 
 }
 
 function getconfigfiles() {
