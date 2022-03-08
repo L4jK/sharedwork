@@ -1580,17 +1580,12 @@ function clear(){
 
 function dropdowprofile(){
 var dropdown = document.getElementsByClassName("dropdown-btn");
-for (let dr = 0;dr < dropdown.length; dr++) {
-  dropdown[dr].addEventListener("click", function() {
-  this.classList.toggle("sidepanel_active");
-  var dropdownContent = this.nextElementSibling;
+
   if (dropdownContent.style.display === "block") {
   dropdownContent.style.display = "none";
   } else {
   dropdownContent.style.display = "block";
-  }
-  });
-}
+  };
 }
 
 function filtrolistafiles() {
