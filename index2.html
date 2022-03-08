@@ -1581,7 +1581,7 @@ function clear(){
 function dropdowprofile(btn,drop){
   var dropdown = document.getElementById(drop);
   var dropdownbtn = document.getElementById(btn);
-  if (dropdown.classList === "show") {
+  if (dropdown.classList.contains("show")) {
     dropdown.classList.add("hidden");
     dropdown.classList.remove("show");
     dropdownbtn.classList.remove("active");
