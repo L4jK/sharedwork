@@ -1580,17 +1580,12 @@ function clear(){
 
 function dropdowprofile(btn,drop){
   var dropdown = document.getElementById(drop);
-  alert(drop)
-  alert(btn)
   var dropdownbtn = document.getElementById(btn);
-  alert("foi"+dropdown.classList.contains("show"))
   if (dropdown.classList.contains("show")) {
-    alert("foi")
     dropdown.classList.add("hidden");
     dropdown.classList.remove("show");
     dropdownbtn.classList.remove("active");
   } else {
-    alert("nao foi")
     dropdown.classList.remove("hidden");
     dropdown.classList.add("show");
   dropdownbtn.classList.toggle("active");
