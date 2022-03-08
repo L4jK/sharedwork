@@ -968,8 +968,8 @@ display: block;
           <i class="fa fa-check-circle fa-2x fa-fw" ></i>Status: Ok!
         </span>
         <a onclick="opemmodalsharedshare()"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i>Change Mode</a>
-        <span onmouseover="dropdowprofile()" onmouseout="dropdowprofile()" class="" style="color:slateblue;"><i class="fa fa-file-text fa-2x fa-fw span_inline_block"></i>
-          <button class="dropdown-btn sidepanel_dropdown-btn">Set Profile 
+        <span onmouseover="dropdowprofile('dropdownbtnprofiles,dropdownprofiles')" onmouseout="dropdowprofile('dropdownbtnprofiles,dropdownprofiles')" class="" style="color:slateblue;"><i class="fa fa-file-text fa-2x fa-fw span_inline_block"></i>
+          <button id="dropdownbtnprofiles" class="dropdown-btn sidepanel_dropdown-btn">Set Profile 
            <i class="fa fa-caret-down"></i>
          </button>
          <div id="dropdownprofiles" class="sidepanel_dropdown-container">
@@ -1578,21 +1578,18 @@ function clear(){
     }
 }
 
-function dropdowprofile(){
-  var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
+function dropdowprofile(btn,drop){
+  var dropdown = document.getElementById(drop);
+  var dropdownbtn = document.getElementById(btn);
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+    dropdownbtn.classList.remove("active");
   } else {
-  dropdownContent.style.display = "block";
+    dropdown.style.display = "block";
+  dropdownbtn.classList.toggle("active");
   }
-  });
-}
+  
+
 }
 
 function filtrolistafiles() {
