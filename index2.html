@@ -1581,11 +1581,13 @@ function clear(){
 function dropdowprofile(btn,drop){
   var dropdown = document.getElementById(drop);
   var dropdownbtn = document.getElementById(btn);
-  if (dropdown.style.display === "block") {
-    dropdown.style.display = "none";
+  if (dropdown.classList === "show") {
+    dropdown.classList.add("hidden");
+    dropdown.classList.remove("show");
     dropdownbtn.classList.remove("active");
   } else {
-    dropdown.style.display = "block";
+    dropdown.classList.remove("hidden");
+    dropdown.classList.add("show");
   dropdownbtn.classList.toggle("active");
   }
   
