@@ -968,7 +968,7 @@ display: block;
           <i class="fa fa-check-circle fa-2x fa-fw" ></i>Status: Ok!
         </span>
         <a onclick="opemmodalsharedshare()"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i>Change Mode</a>
-        <span class="" style="color:slateblue;"><i class="fa fa-file-text fa-2x fa-fw span_inline_block"></i>
+        <span onmouseover="dropdowprofile()" onmouseout="dropdowprofile()" class="" style="color:slateblue;"><i class="fa fa-file-text fa-2x fa-fw span_inline_block"></i>
           <button class="dropdown-btn sidepanel_dropdown-btn">Set Profile 
            <i class="fa fa-caret-down"></i>
          </button>
@@ -1578,6 +1578,7 @@ function clear(){
     }
 }
 
+function dropdowprofile(){
 var dropdown = document.getElementsByClassName("dropdown-btn");
 for (let dr = 0;dr < dropdown.length; dr++) {
   dropdown[dr].addEventListener("click", function() {
@@ -1589,6 +1590,7 @@ for (let dr = 0;dr < dropdown.length; dr++) {
   dropdownContent.style.display = "block";
   }
   });
+}
 }
 
 function filtrolistafiles() {
