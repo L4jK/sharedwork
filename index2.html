@@ -1628,8 +1628,12 @@ function display(id){
     x.className = "hidden";
   }else if(x.style.display === "none"){
     x.style.display = "block";
-  } else if(x.style.display === "block"){
+  }else if(x.style.display === "block"){
     x.style.display = "none";
+  }else if(x.style.visibility === "visible"){
+    x.style.visibility = "hidden";
+  }else if(x.style.visibility === "visible"){
+    x.style.visibility = "visible";
   }
 }
         </script>
