@@ -764,7 +764,10 @@ display: block;
   position:absolute;
   cursor: pointer;
 }
-
+#divcreatenewprofile{
+  display: inline-block;
+  visibility: hidden;
+}
         </style>
 </head>
 <body onload="start()">
@@ -896,7 +899,7 @@ display: block;
   <p>edit ou crie um novo profile.</p>
   <div class="selectprofile_class">
   <button id="button_new_profile" class="button_add_newprofile" onclick="display('divcreatenewprofile')">+</button>
-  <div id="divcreatenewprofile" class="hidden">
+  <div id="divcreatenewprofile">
     <input id="inputnewprofile" type="text" name="newprofile" placeholder="New profile">
     <button id="button_create_profile" onclick="newconfigfile()">criar</button>
     <div class="span_inline_block">
