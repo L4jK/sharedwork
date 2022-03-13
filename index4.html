@@ -210,8 +210,6 @@ frameborder="0" allowfullscreen></iframe>
       player = new YT.Player('ytplayer', {
         width:"720",
          height:"405",
-         listType:"playlist",
-         list:"RDZKr4ys2avI0",
         events: {
           'onReady': onPlayerReady,
           'onStateChange': onPlayerStateChange
@@ -237,6 +235,7 @@ frameborder="0" allowfullscreen></iframe>
     function stopVideo() {
       player.stopVideo();
     }
+    player.loadVideoByUrl({mediaContentUrl:"https://www.youtube.com/watch?v=e7HBypw4lhY&list=RD450p7goxZqg&index=11",startSeconds:0});
   </script>
 
 </body>
