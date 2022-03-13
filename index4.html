@@ -211,6 +211,7 @@ function dragElement(elmnt) {
           'onStateChange': onPlayerStateChange
         }
       });
+      player.loadVideoByUrl({mediaContentUrl:"https://www.youtube.com/watch?v=e7HBypw4lhY&list=RD450p7goxZqg&index=11",startSeconds:0});
     }
 
     // 4. The API will call this function when the video player is ready.
@@ -231,7 +232,7 @@ function dragElement(elmnt) {
     function stopVideo() {
       player.stopVideo();
     }
-    player.loadVideoByUrl({mediaContentUrl:"https://www.youtube.com/watch?v=e7HBypw4lhY&list=RD450p7goxZqg&index=11",startSeconds:0});
+    
   </script>
 
 </body>
