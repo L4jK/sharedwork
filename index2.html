@@ -897,6 +897,10 @@ display: block;
   <h3>config drive</h3>
   <p>edit ou crie um novo profile.</p>
   <div class="selectprofile_class">
+    <div id="divselect_profile_1" class="custom-select">
+
+   
+    </div>
   <button id="button_new_profile" class="button_add_newprofile" onclick="display('divcreatenewprofile')">+</button>
   <div id="divcreatenewprofile" style="visibility: hidden;">
     <input id="inputnewprofile" type="text" name="newprofile" placeholder="New profile">
@@ -1177,18 +1181,22 @@ const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'
         let jText= '{"jsonResponse":'+files[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
-        let selectcreat;
+        let selectcreat1;
+        let selectcreat2;
           if(jLen == 1){        
-            selectcreat += '<a value="No files">No files</a'
+            selectcreat1 += '<a value="No files">No files</a>'
+            selectcreat2 += '<option value="No files">No files</option>'
       }else{
         for (let i = 0; i < jLen; i++) {
-          selectcreat += '<a value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</a>';
+          selectcreat1 += '<a value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</a>';
+          selectcreat2 += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
         }
       }
-        document.getElementById(files[1]).innerHTML = selectcreat;
-
+        document.getElementById(files[1]).innerHTML = selectcreat1;
+        document.getElementById("divselect_profile_1").innerHTML = selectcreat2;
         document.getElementById("loading_side").className = "hidden";
         document.getElementById("ok_side").className = "show";
+        funInitselect();
       }
 
       function driveselectfolder(folders) {  
