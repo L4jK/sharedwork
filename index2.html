@@ -1181,8 +1181,8 @@ const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'
         let jText= '{"jsonResponse":'+files[0]+'}';
         const obj = JSON.parse(jText);
         let jLen = Object.keys(obj.jsonResponse).length;
-        let selectcreat1;
-        let selectcreat2;
+        let selectcreat1="";
+        let selectcreat2="";
           if(jLen == 1){        
             selectcreat1 += '<a value="No files">No files</a>'
             selectcreat2 += '<select><option value="No files">No files</option></select>'
