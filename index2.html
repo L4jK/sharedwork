@@ -1185,18 +1185,20 @@ const divpart1 = '\'<div class=°tooltip°><div class=°chipuser°><img src=°\'
         let selectcreat2;
           if(jLen == 1){        
             selectcreat1 += '<a value="No files">No files</a>'
-            selectcreat2 += '<option value="No files">No files</option>'
+            selectcreat2 += '<select><option value="No files">No files</option></select>'
       }else{
+        selectcreat2 += "<select>";
         for (let i = 0; i < jLen; i++) {
           selectcreat1 += '<a value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</a>';
           selectcreat2 += '<option value="'+ obj.jsonResponse[i].id+'">'+obj.jsonResponse[i].name +'</option>';
         }
+        selectcreat2 += "</select>";
       }
         document.getElementById(files[1]).innerHTML = selectcreat1;
         document.getElementById("divselect_profile_1").innerHTML = selectcreat2;
         document.getElementById("loading_side").className = "hidden";
         document.getElementById("ok_side").className = "show";
-       // funInitselect();
+       funInitselect();
       }
 
       function driveselectfolder(folders) {  
