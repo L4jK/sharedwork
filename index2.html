@@ -1155,7 +1155,8 @@ function driveselectfolder(folders) {
         selectcreat += "</select>";
         if(document.getElementById(folders[1])!==null){
         document.getElementById(folders[1]).innerHTML = selectcreat;
-        funInit();
+        //funInit();
+        funInitselect();
         }else{
           parent(folders[1],selectcreat);
           funInitselect();
